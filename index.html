@@ -52,6 +52,11 @@
 [data-acc="c12"]{--acc:#B23A48;--acc-soft:#FAECEE}
 [data-acc="c13"]{--acc:#5A6A00;--acc-soft:#F2F4E2}
 [data-acc="c14"]{--acc:#31517D;--acc-soft:#EBF0F7}
+[data-acc="c15"]{--acc:#8A2D6B;--acc-soft:#F7EBF2}
+[data-acc="c16"]{--acc:#443C9E;--acc-soft:#EEEDF9}
+[data-acc="c17"]{--acc:#2F5D50;--acc-soft:#EAF2EF}
+[data-acc="c18"]{--acc:#A03A52;--acc-soft:#F9ECEF}
+[data-acc="c19"]{--acc:#7C4A00;--acc-soft:#F6EFE3}
 
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -144,6 +149,8 @@ noscript .view{display:block}
 .part-head h2{font-family:var(--font-disp);font-size:1.5rem;font-weight:800;margin:0;letter-spacing:.02em}
 .part-head .p-sub{font-size:.86rem;color:var(--ink-3);width:100%;margin:0}
 .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:.9rem}
+.toc-mile{grid-column:1/-1;display:flex;align-items:center;gap:.7em;font-size:.76rem;font-weight:800;letter-spacing:.16em;color:var(--ink-3);margin:.5rem 0 -.1rem}
+.toc-mile::after{content:"";flex:1;height:2px;background-image:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px)}
 .toc-card{position:relative;display:block;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--acc);
   border-radius:12px;padding:1rem 1rem .9rem;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);
   transition:transform .18s ease,box-shadow .18s ease}
@@ -394,7 +401,7 @@ td .tag-n{color:var(--ink-3)}
     </a>
     <div class="top-progress" aria-label="読了の進み具合">
       <div class="stitch-track"><div class="stitch-fill" id="progressFill"></div></div>
-      <span class="top-count"><span id="progressCount">0</span> / 14</span>
+      <span class="top-count"><span id="progressCount">0</span> / 19</span>
     </div>
     <button class="toc-btn" type="button" data-goto="#/home">目次</button>
   </div>
@@ -442,7 +449,7 @@ td .tag-n{color:var(--ink-3)}
       <a class="btn btn-ghost" href="#toc-top" data-scroll>目次を見る</a>
     </div>
     <div class="cover-meta">
-      <span class="chip">基礎編 6章＋応用編 8章＋付録</span>
+      <span class="chip">初級・中級・上級＋応用の全19章</span>
       <span class="chip">プロンプト例 40本以上・コピーして使える</span>
       <span class="chip">さわって学べる仕掛けつき</span>
       <span class="chip">スマホ対応</span>
@@ -453,7 +460,7 @@ td .tag-n{color:var(--ink-3)}
     <div class="howto-in">
       <h2>この本の使い方</h2>
       <ol>
-        <li><strong>順番に読むのがおすすめ。</strong>とくに基礎編（第1〜6章）は、後の章の土台になっています。1章あたり10分前後です。</li>
+        <li><strong>順番に読むのがおすすめ。</strong>とくに初級編と中級編（第1〜7章）は、後の章の土台になっています。1章あたり10分前後です。</li>
         <li><strong>手を動かしながら読む。</strong>スマホでもパソコンでもいいので、AIの画面をとなりに開いておきましょう。プロンプト例は「コピー」ボタンでそのまま貼り付けられます。</li>
         <li><strong>章の終わりで「ひと針」すすめる。</strong>読み終えたらボタンを押すと、上の縫い目が伸びていきます。クイズは記憶の定着にとても効くので、飛ばさずに。</li>
       </ol>
@@ -463,8 +470,8 @@ td .tag-n{color:var(--ink-3)}
   <div class="toc" id="toc-top">
     <div class="part-head" data-acc="c1">
       <span class="p-num">I</span>
-      <h2>基礎編：AIの正体と付き合い方</h2>
-      <p class="p-sub">AIが何者で、どう話しかければ力を貸してくれるのか。ここが全部の土台になります。</p>
+      <h2>初級編：AIを知る</h2>
+      <p class="p-sub">AIが何者なのか。ここを読み終えれば、ニュースの半分と、道具選びに迷わない自分が手に入ります。</p>
     </div>
     <div class="toc-grid">
       <a class="toc-card rv" href="#/ch1" data-nav data-acc="c1" data-toc="ch1">
@@ -488,6 +495,14 @@ td .tag-n{color:var(--ink-3)}
         <span class="t-meta">約10分<span class="fun">相性診断つき</span></span>
         <span class="done-mark" aria-hidden="true">✓</span>
       </a>
+    </div>
+
+    <div class="part-head" data-acc="c4">
+      <span class="p-num">II</span>
+      <h2>中級編：AIを使いこなす</h2>
+      <p class="p-sub">指示の型紙、会話の往復、資料の渡し方、そして安全。毎日の道具として乗りこなすための4章です。</p>
+    </div>
+    <div class="toc-grid">
       <a class="toc-card rv" href="#/ch4" data-nav data-acc="c4" data-toc="ch4">
         <span class="t-num">04</span>
         <h3>プロンプトの基本</h3>
@@ -502,8 +517,15 @@ td .tag-n{color:var(--ink-3)}
         <span class="t-meta">約9分</span>
         <span class="done-mark" aria-hidden="true">✓</span>
       </a>
-      <a class="toc-card rv" href="#/ch6" data-nav data-acc="c6" data-toc="ch6">
+      <a class="toc-card rv" href="#/ch6" data-nav data-acc="c15" data-toc="ch6">
         <span class="t-num">06</span>
+        <h3>AIに資料を食わせる</h3>
+        <p>画像、ファイル、URLを渡すと精度が跳ね上がる。3ツールの「プロジェクト機能」の違いも整理。</p>
+        <span class="t-meta">約10分<span class="fun">3モデル比較表</span></span>
+        <span class="done-mark" aria-hidden="true">✓</span>
+      </a>
+      <a class="toc-card rv" href="#/ch7" data-nav data-acc="c6" data-toc="ch7">
+        <span class="t-num">07</span>
         <h3>AIの限界と付き合い方</h3>
         <p>AIは堂々と間違える。ウソの見抜き方、著作権や個人情報など、身を守るルール。</p>
         <span class="t-meta">約11分<span class="fun">間違い探しつき</span></span>
@@ -511,63 +533,102 @@ td .tag-n{color:var(--ink-3)}
       </a>
     </div>
 
+    <div class="part-head" data-acc="c16">
+      <span class="p-num">III</span>
+      <h2>上級編：AIで差をつける</h2>
+      <p class="p-sub">みんなと同じ使い方は、みんなと同じ答えしか生まない。平均から抜け出す技術と、手を動かすAIの世界。</p>
+    </div>
+    <div class="toc-grid">
+      <a class="toc-card rv" href="#/ch8" data-nav data-acc="c16" data-toc="ch8">
+        <span class="t-num">08</span>
+        <h3>平均を出させない</h3>
+        <p>AIの答えが「それっぽい」のには理由がある。AIっぽさを消し、自分だけの答えを引き出す指示術。</p>
+        <span class="t-meta">約10分<span class="fun">間違い探しつき</span></span>
+        <span class="done-mark" aria-hidden="true">✓</span>
+      </a>
+      <a class="toc-card rv" href="#/ch9" data-nav data-acc="c17" data-toc="ch9">
+        <span class="t-num">09</span>
+        <h3>手を動かすAI：Claude CodeとCodex</h3>
+        <p>会話するAIの一歩先。ファイルを作り、作業をこなす「エージェント」の世界をのぞく。</p>
+        <span class="t-meta">約9分</span>
+        <span class="done-mark" aria-hidden="true">✓</span>
+      </a>
+    </div>
+
     <div class="part-head" data-acc="c7">
-      <span class="p-num">II</span>
+      <span class="p-num">IV</span>
       <h2>応用編：ブランドを立ち上げ、育てる</h2>
       <p class="p-sub">コンセプトづくりから日々の運営まで。架空ブランド「ハレノヒ」を例に、実際の仕事の順番で使い方を覚えます。</p>
     </div>
     <div class="toc-grid">
-      <a class="toc-card rv" href="#/ch7" data-nav data-acc="c7" data-toc="ch7">
-        <span class="t-num">07</span>
+      <div class="toc-mile">そなえる</div>
+      <a class="toc-card rv" href="#/ch10" data-nav data-acc="c7" data-toc="ch10">
+        <span class="t-num">10</span>
         <h3>ブランドコンセプトを固める</h3>
         <p>「誰に、なにを、なぜ」を言葉にする。市場調べとペルソナづくりをAIと進める。</p>
         <span class="t-meta">約12分</span>
         <span class="done-mark" aria-hidden="true">✓</span>
       </a>
-      <a class="toc-card rv" href="#/ch8" data-nav data-acc="c8" data-toc="ch8">
-        <span class="t-num">08</span>
+      <a class="toc-card rv" href="#/ch11" data-nav data-acc="c8" data-toc="ch11">
+        <span class="t-num">11</span>
         <h3>ブランド名と世界観をつくる</h3>
         <p>名前の候補出しからロゴの方向性、世界観の言語化まで。商標の落とし穴も。</p>
         <span class="t-meta">約11分</span>
         <span class="done-mark" aria-hidden="true">✓</span>
       </a>
-      <a class="toc-card rv" href="#/ch9" data-nav data-acc="c9" data-toc="ch9">
-        <span class="t-num">09</span>
+      <a class="toc-card rv" href="#/ch12" data-nav data-acc="c9" data-toc="ch12">
+        <span class="t-num">12</span>
         <h3>商品企画とデザイン</h3>
         <p>トレンドの調べ方、デザイン案の広げ方、画像生成AIでラフを作る方法。</p>
         <span class="t-meta">約12分</span>
         <span class="done-mark" aria-hidden="true">✓</span>
       </a>
-      <a class="toc-card rv" href="#/ch10" data-nav data-acc="c10" data-toc="ch10">
-        <span class="t-num">10</span>
+      <a class="toc-card rv" href="#/ch13" data-nav data-acc="c10" data-toc="ch13">
+        <span class="t-num">13</span>
         <h3>生産と原価の考え方</h3>
-        <p>小ロット生産の探し方と、値段の決め方。工場とのやり取りもAIが下書きする。</p>
+        <p>小ロット生産の探し方と、1着の値段の決め方。工場とのやり取りもAIが下書きする。</p>
         <span class="t-meta">約12分<span class="fun">原価計算機つき</span></span>
         <span class="done-mark" aria-hidden="true">✓</span>
       </a>
-      <a class="toc-card rv" href="#/ch11" data-nav data-acc="c11" data-toc="ch11">
-        <span class="t-num">11</span>
+      <a class="toc-card rv" href="#/ch14" data-nav data-acc="c18" data-toc="ch14">
+        <span class="t-num">14</span>
+        <h3>自己資金と資金繰り</h3>
+        <p>結局いくら用意すればいい？発注ロットを動かしながら、必要資金と回収ラインを試算する。</p>
+        <span class="t-meta">約11分<span class="fun">資金シミュレーターつき</span></span>
+        <span class="done-mark" aria-hidden="true">✓</span>
+      </a>
+      <div class="toc-mile">ひらく</div>
+      <a class="toc-card rv" href="#/ch15" data-nav data-acc="c11" data-toc="ch15">
+        <span class="t-num">15</span>
         <h3>ネットショップを開く</h3>
         <p>販売の場所選びから、買いたくなる商品ページの文章まで。開店準備を一気に。</p>
         <span class="t-meta">約11分</span>
         <span class="done-mark" aria-hidden="true">✓</span>
       </a>
-      <a class="toc-card rv" href="#/ch12" data-nav data-acc="c12" data-toc="ch12">
-        <span class="t-num">12</span>
+      <a class="toc-card rv" href="#/ch16" data-nav data-acc="c19" data-toc="ch16">
+        <span class="t-num">16</span>
+        <h3>法とルールの守り</h3>
+        <p>商標、著作権、表示義務、契約。あとから泣かないための「守りの知識」を1章にまとめて。</p>
+        <span class="t-meta">約11分</span>
+        <span class="done-mark" aria-hidden="true">✓</span>
+      </a>
+      <a class="toc-card rv" href="#/ch17" data-nav data-acc="c12" data-toc="ch17">
+        <span class="t-num">17</span>
         <h3>SNSで知ってもらう</h3>
         <p>InstagramとTikTokの運用をAIと回す。投稿計画、キャプション、続けるコツ。</p>
         <span class="t-meta">約12分</span>
         <span class="done-mark" aria-hidden="true">✓</span>
       </a>
-      <a class="toc-card rv" href="#/ch13" data-nav data-acc="c13" data-toc="ch13">
-        <span class="t-num">13</span>
+      <div class="toc-mile">つづける</div>
+      <a class="toc-card rv" href="#/ch18" data-nav data-acc="c13" data-toc="ch18">
+        <span class="t-num">18</span>
         <h3>日々の運営をラクにする</h3>
         <p>お客さま対応、レビュー返信、お金の記録。ひとり運営の事務をAIに任せる。</p>
         <span class="t-meta">約10分</span>
         <span class="done-mark" aria-hidden="true">✓</span>
       </a>
-      <a class="toc-card rv" href="#/ch14" data-nav data-acc="c14" data-toc="ch14">
-        <span class="t-num">14</span>
+      <a class="toc-card rv" href="#/ch19" data-nav data-acc="c14" data-toc="ch19">
+        <span class="t-num">19</span>
         <h3>ふりかえりと、学びつづけ方</h3>
         <p>売れたあとが本番。数字の読み方と、変化の速いAIを追いかけ続ける方法。</p>
         <span class="t-meta">約9分</span>
@@ -594,7 +655,7 @@ td .tag-n{color:var(--ink-3)}
 <article class="view chapter" id="view-ch1" data-acc="c1" aria-labelledby="ch1-title">
   <header class="ch-hero">
     <div class="ch-hero-in">
-      <div class="ch-kicker"><span class="part-tag">基礎編</span><span class="ch-num">01</span></div>
+      <div class="ch-kicker"><span class="part-tag">初級編</span><span class="ch-num">01</span></div>
       <h1 id="ch1-title">AIとはなにか</h1>
       <p class="ch-lead">AIはSF映画の中の存在ではなく、すでにポケットの中で毎日働いている道具です。まずは「AIとは結局なにをするものなのか」を、身近な例からつかみます。</p>
       <ul class="goals">
@@ -655,14 +716,14 @@ td .tag-n{color:var(--ink-3)}
       <div class="tbl-wrap"><table>
         <thead><tr><th>ブランドの工程</th><th>AIが手伝えること</th><th>学ぶ章</th></tr></thead>
         <tbody>
-          <tr><td>コンセプトづくり</td><td>市場調べ、お客さま像の整理、コンセプト文の言語化</td><td>第7章</td></tr>
-          <tr><td>ブランド名と世界観</td><td>名前の候補出し、ロゴの方向性、世界観の文章化</td><td>第8章</td></tr>
-          <tr><td>商品企画</td><td>トレンド調査、デザイン案出し、画像生成でラフ作成</td><td>第9章</td></tr>
-          <tr><td>生産と価格</td><td>工場探しの下調べ、原価計算、メール下書き</td><td>第10章</td></tr>
-          <tr><td>販売</td><td>ネットショップの文章、商品説明、写真の方向づけ</td><td>第11章</td></tr>
-          <tr><td>集客</td><td>SNSの投稿計画、キャプション、広告文</td><td>第12章</td></tr>
-          <tr><td>日々の運営</td><td>問い合わせ返信、レビュー対応、お金の記録の整理</td><td>第13章</td></tr>
-          <tr><td>改善</td><td>売上のふりかえり、次の一手の壁打ち</td><td>第14章</td></tr>
+          <tr><td>コンセプトづくり</td><td>市場調べ、お客さま像の整理、コンセプト文の言語化</td><td>第10章</td></tr>
+          <tr><td>ブランド名と世界観</td><td>名前の候補出し、ロゴの方向性、世界観の文章化</td><td>第11章</td></tr>
+          <tr><td>商品企画</td><td>トレンド調査、デザイン案出し、画像生成でラフ作成</td><td>第12章</td></tr>
+          <tr><td>生産と価格</td><td>工場探しの下調べ、原価計算、メール下書き</td><td>第13章</td></tr>
+          <tr><td>販売</td><td>ネットショップの文章、商品説明、写真の方向づけ</td><td>第15章</td></tr>
+          <tr><td>集客</td><td>SNSの投稿計画、キャプション、広告文</td><td>第17章</td></tr>
+          <tr><td>日々の運営</td><td>問い合わせ返信、レビュー対応、お金の記録の整理</td><td>第18章</td></tr>
+          <tr><td>改善</td><td>売上のふりかえり、次の一手の壁打ち</td><td>第19章</td></tr>
         </tbody>
       </table></div>
       <p>逆に、AIにできないこともはっきりしています。<strong>あなたの好みを決めること、責任を取ること、実物の生地を触って確かめること</strong>。ブランドの魂の部分は最後まで人間の仕事です。AIは「決める人」ではなく、<mark>朝から晩まで文句を言わずに働く、初めてのスタッフ</mark>だと思ってください。</p>
@@ -705,7 +766,7 @@ td .tag-n{color:var(--ink-3)}
 <article class="view chapter" id="view-ch2" data-acc="c2" aria-labelledby="ch2-title">
   <header class="ch-hero">
     <div class="ch-hero-in">
-      <div class="ch-kicker"><span class="part-tag">基礎編</span><span class="ch-num">02</span></div>
+      <div class="ch-kicker"><span class="part-tag">初級編</span><span class="ch-num">02</span></div>
       <h1 id="ch2-title">生成AIのしくみ：「続きを当てる機械」</h1>
       <p class="ch-lead">ChatGPTと話していると、中に小さな人がいるように感じます。でも実際にやっているのは、驚くほど単純なこと。それがわかると、AIの得意と苦手が自然に見えてきます。</p>
       <ul class="goals">
@@ -758,7 +819,7 @@ td .tag-n{color:var(--ink-3)}
       </ul>
       <h3>苦手なこと</h3>
       <ul>
-        <li><strong>事実の保証</strong>：「それらしい続き」を作る機械なので、堂々と間違えることがある（第6章で対策します）。</li>
+        <li><strong>事実の保証</strong>：「それらしい続き」を作る機械なので、堂々と間違えることがある（第7章で対策します）。</li>
         <li><strong>最新の情報</strong>：訓練データにはしめきり日があります。ただし最近のAIはWeb検索機能で補えるものが多い。</li>
         <li><strong>厳密な計算</strong>：電卓のような計算専用の仕組みではない。桁の多い計算は道具にやらせるのが安全。</li>
         <li><strong>あなたの事情</strong>：あなたのブランドも、予算も、好みも、<strong>伝えなければ何も知りません</strong>。ここが次の第4章「プロンプト」につながります。</li>
@@ -772,7 +833,7 @@ td .tag-n{color:var(--ink-3)}
     <section class="rv">
       <h2>入力したものは、どこへ行く？</h2>
       <p>ひとつだけ、はじめに知っておくべき注意があります。AIとの会話は、サービスによっては<strong>AIの改善（追加の学習）に使われることがあります</strong>。多くのサービスに「学習に使わせない」設定が用意されているので、仕事で使うならまず設定を確認しましょう。</p>
-      <p>そして設定に関係なく、<mark>人の住所や電話番号、取引先との契約内容のような秘密情報は入力しない</mark>。これはAI時代の基本マナーです。詳しくは第6章でルールとしてまとめます。</p>
+      <p>そして設定に関係なく、<mark>人の住所や電話番号、取引先との契約内容のような秘密情報は入力しない</mark>。これはAI時代の基本マナーです。詳しくは第7章でルールとしてまとめます。</p>
     </section>
 
     <aside class="work rv">
@@ -811,7 +872,7 @@ td .tag-n{color:var(--ink-3)}
 <article class="view chapter" id="view-ch3" data-acc="c3" aria-labelledby="ch3-title">
   <header class="ch-hero">
     <div class="ch-hero-in">
-      <div class="ch-kicker"><span class="part-tag">基礎編</span><span class="ch-num">03</span></div>
+      <div class="ch-kicker"><span class="part-tag">初級編</span><span class="ch-num">03</span></div>
       <h1 id="ch3-title">三大AIツールの選び方</h1>
       <p class="ch-lead">ChatGPT、Claude、Gemini。名前は聞くけれど、なにが違うのか。3つの「性格」を知って、最初の相棒を決めましょう。結論から言うと、どれを選んでも失敗はありません。</p>
       <ul class="goals">
@@ -889,7 +950,7 @@ td .tag-n{color:var(--ink-3)}
     <section class="rv">
       <h2>画像をつくるAIは「別ジャンル」</h2>
       <p>ここまでの3つは「言葉のAI」です。服のデザイン画のような<strong>画像をつくるAI</strong>は、もともと別ジャンルとして育ちました。MidjourneyやStable Diffusionといった専用ツールが有名です。</p>
-      <p>ただし今は、ChatGPTやGeminiの中からも画像づくりを頼めるようになっています。初心者はまず<mark>いま選んだ言葉のAIの中で画像も試す</mark>ので十分。デザインラフづくりの実践は第9章でやります。</p>
+      <p>ただし今は、ChatGPTやGeminiの中からも画像づくりを頼めるようになっています。初心者はまず<mark>いま選んだ言葉のAIの中で画像も試す</mark>ので十分。デザインラフづくりの実践は第12章でやります。</p>
     </section>
 
     <section class="rv">
@@ -932,7 +993,7 @@ td .tag-n{color:var(--ink-3)}
       <ol>
         <li>診断で決めたツールの公式サイトから、無料アカウントを作る</li>
         <li>最初のメッセージとしてこう送る：「はじめまして。これからアパレルブランドの立ち上げを手伝ってもらいます。よろしくね」</li>
-        <li>返事が来たら、この章は完了。設定画面に「入力を学習に使わせない」項目があるかも見ておくと、第6章が楽になります</li>
+        <li>返事が来たら、この章は完了。設定画面に「入力を学習に使わせない」項目があるかも見ておくと、第7章が楽になります</li>
       </ol>
     </aside>
 
@@ -960,7 +1021,7 @@ td .tag-n{color:var(--ink-3)}
 <article class="view chapter" id="view-ch4" data-acc="c4" aria-labelledby="ch4-title">
   <header class="ch-hero">
     <div class="ch-hero-in">
-      <div class="ch-kicker"><span class="part-tag">基礎編</span><span class="ch-num">04</span></div>
+      <div class="ch-kicker"><span class="part-tag">中級編</span><span class="ch-num">04</span></div>
       <h1 id="ch4-title">プロンプトの基本：お願いの「型紙」</h1>
       <p class="ch-lead">同じAIなのに、使う人によって成果がまるで違う。差を生むのはプロンプト、つまりAIへの指示文です。服づくりに型紙があるように、良い指示にも型があります。この章がこの本でいちばん大事です。</p>
       <ul class="goals">
@@ -1113,7 +1174,7 @@ td .tag-n{color:var(--ink-3)}
 <article class="view chapter" id="view-ch5" data-acc="c5" aria-labelledby="ch5-title">
   <header class="ch-hero">
     <div class="ch-hero-in">
-      <div class="ch-kicker"><span class="part-tag">基礎編</span><span class="ch-num">05</span></div>
+      <div class="ch-kicker"><span class="part-tag">中級編</span><span class="ch-num">05</span></div>
       <h1 id="ch5-title">AIとの対話術：往復で磨く</h1>
       <p class="ch-lead">プロンプトの型紙で最初の一投ができるようになりました。次は、返ってきた答えを育てる技術です。AIが本当に強いのは、一問一答ではなく「会話」なのです。</p>
       <ul class="goals">
@@ -1220,17 +1281,118 @@ td .tag-n{color:var(--ink-3)}
     <button class="done-btn" type="button" data-done="ch5"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
     <nav class="pager" aria-label="章の移動">
       <a href="#/ch4" data-nav><span class="dir">前の章</span>04 プロンプトの基本</a>
-      <a class="next" href="#/ch6" data-nav><span class="dir">次の章</span>06 AIの限界と付き合い方</a>
+      <a class="next" href="#/ch6" data-nav><span class="dir">次の章</span>06 AIに資料を食わせる</a>
     </nav>
   </div>
 </article>
 
-<!-- ============================== 第6章 ============================== -->
-<article class="view chapter" id="view-ch6" data-acc="c6" aria-labelledby="ch6-title">
+<!-- ============================== 第7章 ============================== -->
+<!-- ============================== 第6章（新設） ============================== -->
+<article class="view chapter" id="view-ch6" data-acc="c15" aria-labelledby="ch6-title">
   <header class="ch-hero">
     <div class="ch-hero-in">
-      <div class="ch-kicker"><span class="part-tag">基礎編</span><span class="ch-num">06</span></div>
-      <h1 id="ch6-title">AIの限界と付き合い方</h1>
+      <div class="ch-kicker"><span class="part-tag">中級編</span><span class="ch-num">06</span></div>
+      <h1 id="ch6-title">AIに資料を食わせる</h1>
+      <p class="ch-lead">ここまでは「言葉で説明して、言葉で頼む」使い方でした。じつはAIには、画像もファイルもURLもそのまま渡せます。言葉で説明する手間が消えて、答えの精度が一段跳ね上がる。中級の入り口にふさわしい技術です。</p>
+      <ul class="goals">
+        <li>画像やファイルをAIに渡して、分析や下書きに使える</li>
+        <li>資料を読ませるときの指示のコツ（目的、注目点、形式）を実践できる</li>
+        <li>3ツールの「プロジェクト機能」の違いを説明し、自分のブランド用に1つ作れる</li>
+      </ul>
+    </div>
+  </header>
+  <div class="ch-body">
+
+    <section class="rv">
+      <h2>「説明する」から「見せる」へ</h2>
+      <p>第4章で、AIは「何も知らない新人スタッフ」だと言いました。新人に仕事を頼むとき、言葉で長々と説明するより、<mark>実物を見せる方が早い</mark>ことがよくあります。AIも同じです。</p>
+      <p>いまの主要なAIは、チャット欄にそのまま添付できます。アパレルの準備で出番が多いのはこのあたりです。</p>
+      <ul>
+        <li><strong>スクリーンショット</strong>：気になる競合ブランドの商品ページを撮って「このページの構成と、うまい点を分析して」</li>
+        <li><strong>手描きのラフ</strong>：ノートに描いた服のスケッチを撮って「このデザインを、工場に伝わる言葉で説明して」</li>
+        <li><strong>自分で撮った商品写真</strong>：「この写真の改善点を、明るさ、構図、背景の観点で指摘して」</li>
+        <li><strong>表計算ファイルやPDF</strong>：サイズ表を渡して「S/M/Lの差がバラバラな箇所がないか点検して」、工場から届いた見積もりPDFを渡して「比較表にして」</li>
+        <li><strong>URL</strong>：記事や商品ページのリンクを渡して要約や分析（読み込めないサイトもあるので、だめならスクショで）</li>
+      </ul>
+      <p>とくに<strong>手描きラフの言語化</strong>は感動的に便利です。頭の中のイメージがAIとの共通言語になり、第12章のデザイン展開や仕様書づくりが一気に加速します。</p>
+    </section>
+
+    <section class="rv">
+      <h2>読ませ方のコツは、型紙と同じ</h2>
+      <p>資料を渡すときも、第4章の型紙の考え方がそのまま効きます。ただ添付して「どう思う？」では、平均的な感想が返ってくるだけ。<strong>目的、注目してほしい点、答えの形式</strong>の3つを添えます。</p>
+      <figure class="prompt-card">
+        <figcaption><span class="pc-label">プロンプト例</span><span class="pc-title">画像・資料を読ませる型紙</span><span class="pc-tools">3ツール共通</span></figcaption>
+        <pre class="pc-body">添付した<em>（画像／ファイルの説明。例：競合ブランドの商品ページのスクリーンショット）</em>を見てください。
+目的：<em>（例：自分の商品ページづくりの参考にしたい）</em>
+注目してほしい点：<em>（例：ページの構成順、写真の使い方、不安つぶしの工夫）</em>
+出力：<em>（例：良い点5つと、自分が真似するときの注意点を箇条書きで）</em>
+私のブランドの文脈：<em>（コンセプトシートを貼り付け）</em></pre>
+        <div class="pc-foot"><button class="copy-btn" type="button">コピー</button><span class="pc-hint">「目的＋注目点＋形式」の3点セットが肝</span></div>
+      </figure>
+      <aside class="note-warn note">
+        <h3>読み間違いはある</h3>
+        <p>AIは画像の中の小さな数字や手書き文字を読み間違えることがあります。サイズ表の数値や金額など、<strong>数字が絡む読み取り結果は必ず自分の目で照合</strong>してください。第7章で学ぶ「下書きと正本」の関係は、読み取りでも同じです。</p>
+      </aside>
+      <p>渡してはいけないものも、先に確認しておきましょう。他人の個人情報が写ったもの、取引先との契約書の原本、そして<strong>他人の有料コンテンツの丸ごとコピー</strong>。このあたりの線引きは次の第7章でルールとしてまとめます。</p>
+    </section>
+
+    <section class="rv">
+      <h2>毎回貼るのが面倒になったら：プロジェクト機能</h2>
+      <p>ここまで、コンセプトシートを「毎回貼り付ける」運用で来ました。実は3ツールとも、<mark>資料と指示をあらかじめ常駐させておく部屋</mark>のような機能があります。ブランド専用の部屋を一度作れば、開くたびにAIがコンセプトを覚えた状態で始まります。</p>
+      <div class="tbl-wrap"><table>
+        <caption>3ツールの「常駐させる機能」ざっくり比較（2026年7月時点の目安。名称や条件は変わるので使う前に公式で確認）</caption>
+        <thead><tr><th></th><th>ChatGPT</th><th>Claude</th><th>Gemini</th></tr></thead>
+        <tbody>
+          <tr><td>機能の名前</td><td>プロジェクト</td><td>Projects（プロジェクト）</td><td>Gems（ジェム）</td></tr>
+          <tr><td>できること</td><td>会話とファイルをテーマごとの箱にまとめ、箱ごとの指示を設定</td><td>資料（コンセプトシート等）と指示を常駐させ、その前提で毎回会話</td><td>役割と指示、参考ファイルを設定した「自分専用AI」を作って使い回す</td></tr>
+          <tr><td>性格の違い</td><td>会話の整理箱＋記憶の強化。過去のやり取りを踏まえた答えが得意</td><td>「資料を読み込んだ相談相手」を作る感覚に一番近い</td><td>「役割を固定した分身」を量産する感覚。Google資料との連携も</td></tr>
+          <tr><td>そのほか</td><td>メモリ機能（会話をまたいで好みを記憶）が別途ある</td><td>長い資料を読ませる相談に強い</td><td>資料の読み込み専用なら NotebookLM という別ツールも強力</td></tr>
+        </tbody>
+      </table></div>
+      <p>細かい仕様は少しずつ違いますが、初心者の使い方はどれも同じでシンプルです。<strong>ブランド専用の部屋をひとつ作り、コンセプトシートと世界観シートを入れておく</strong>。第4章で「文脈がいちばん効く」と学びましたが、プロジェクト機能とは、その文脈を毎回自動で効かせる仕組みなのです。</p>
+      <div class="case">
+        <h3>ハレノヒでいうと</h3>
+        <p>「ハレノヒ企画室」というプロジェクトを作り、コンセプトシート、世界観シート、ペルソナ3人のメモを入れておく。以後、商品説明もSNS文も工場メールも、この部屋の中で頼めば毎回ブランドの前提つきで返ってくる。貼り付け作業からの卒業です。</p>
+      </div>
+    </section>
+
+    <aside class="work rv">
+      <h2>実践ワーク：見せて、住まわせる</h2>
+      <ol>
+        <li>好きなブランドの商品ページをスクショして、上の「読ませる型紙」で分析させる</li>
+        <li>使っているツールでブランド専用のプロジェクト（またはGem）をひとつ作る</li>
+        <li>コンセプトシートを入れて、「私のブランドを一言で説明して」と聞き、正しく答えるか確かめる</li>
+      </ol>
+    </aside>
+
+    <section class="quiz rv" aria-label="第6章のクイズ">
+      <h2>おさらいクイズ</h2>
+      <details class="q"><summary>Q1. 資料を読ませるとき、添付と一緒に伝えるべき3点セットは？</summary>
+        <div class="q-a"><p><strong>答え</strong>：目的、注目してほしい点、答えの形式。ただ渡して「どう思う？」では平均的な感想しか返らないのでした。</p></div>
+      </details>
+      <details class="q"><summary>Q2. AIが読み取ったサイズ表の数値は、そのまま使っていい？</summary>
+        <div class="q-a"><p><strong>答え</strong>：だめ。画像の数字や手書き文字は読み間違いがあるので、数字は必ず自分の目で照合する。読み取り結果も「下書き」でした。</p></div>
+      </details>
+      <details class="q"><summary>Q3. プロジェクト機能を一言でいうと、何を自動化する仕組み？</summary>
+        <div class="q-a"><p><strong>答え</strong>：「文脈の貼り付け」の自動化。ブランドの資料と指示を常駐させ、毎回その前提で会話を始められる部屋でした。</p></div>
+      </details>
+    </section>
+
+  </div>
+  <div class="ch-end">
+    <button class="done-btn" type="button" data-done="ch6"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
+    <nav class="pager" aria-label="章の移動">
+      <a href="#/ch5" data-nav><span class="dir">前の章</span>05 AIとの対話術</a>
+      <a class="next" href="#/ch7" data-nav><span class="dir">次の章</span>07 AIの限界と付き合い方</a>
+    </nav>
+  </div>
+</article>
+
+<article class="view chapter" id="view-ch7" data-acc="c6" aria-labelledby="ch7-title">
+  <header class="ch-hero">
+    <div class="ch-hero-in">
+      <div class="ch-kicker"><span class="part-tag">中級編</span><span class="ch-num">07</span></div>
+      <h1 id="ch7-title">AIの限界と付き合い方</h1>
       <p class="ch-lead">AIは、知らないことでも堂々と答えます。この性質を知らずに使うのは、シートベルトなしの運転と同じ。この章は、あなたとあなたのブランドを守る安全ベルトです。</p>
       <ul class="goals">
         <li>ハルシネーション（もっともらしいウソ）がなぜ起きるか説明できる</li>
@@ -1298,7 +1460,7 @@ td .tag-n{color:var(--ink-3)}
       <ul>
         <li><strong>他ブランドの模倣をさせない</strong>：「〇〇（有名ブランド）風のロゴ」「あのキャラクターをプリントした服」のような指示は、生成できてしまっても<strong>商用利用すれば権利侵害のリスク</strong>があります。参考にしてよいのは雰囲気やムードまで。ロゴ、キャラクター、特徴的な柄はアウトと覚えてください。</li>
         <li><strong>生成物の権利はサービスの規約を確認</strong>：作った画像を商品や広告に使えるかは、各サービスの利用規約で条件が違います。商用利用の可否は使う前に確認を。</li>
-        <li><strong>ブランド名は商標を確認</strong>：AIが出した名前の候補が、すでに商標登録されていることは普通にあります。特許庁の検索サイト（J-PlatPat）で確認する手順は第8章で扱います。</li>
+        <li><strong>ブランド名は商標を確認</strong>：AIが出した名前の候補が、すでに商標登録されていることは普通にあります。特許庁の検索サイト（J-PlatPat）で確認する手順は第11章で扱います。</li>
         <li><strong>デザインの「参考」と「盗用」の線引きに、AIの意見を使わない</strong>：権利の最終判断は弁護士や弁理士の領域。不安な案件は専門家に相談を。</li>
       </ul>
     </section>
@@ -1330,7 +1492,7 @@ td .tag-n{color:var(--ink-3)}
       <p>10分の体験ですが、「下書きと正本を分ける」感覚が一生ものになります。</p>
     </aside>
 
-    <section class="quiz rv" aria-label="第6章のクイズ">
+    <section class="quiz rv" aria-label="第7章のクイズ">
       <h2>おさらいクイズ</h2>
       <details class="q"><summary>Q1. ハルシネーションはなぜ起きる？　第2章の仕組みから説明すると？</summary>
         <div class="q-a"><p><strong>答え</strong>：生成AIは「それらしい続き」を確率で作る機械なので、知らないことでも、もっともらしい答えを作ってしまうから。流暢さと正しさは別物でした。</p></div>
@@ -1345,19 +1507,219 @@ td .tag-n{color:var(--ink-3)}
 
   </div>
   <div class="ch-end">
-    <button class="done-btn" type="button" data-done="ch6"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
+    <button class="done-btn" type="button" data-done="ch7"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
     <nav class="pager" aria-label="章の移動">
       <a href="#/ch5" data-nav><span class="dir">前の章</span>05 AIとの対話術</a>
-      <a class="next" href="#/ch7" data-nav><span class="dir">次の章</span>07 ブランドコンセプトを固める</a>
+      <a class="next" href="#/ch8" data-nav><span class="dir">次の章</span>08 平均を出させない</a>
     </nav>
   </div>
 </article>
-<!-- ============================== 第7章 ============================== -->
-<article class="view chapter" id="view-ch7" data-acc="c7" aria-labelledby="ch7-title">
+<!-- ============================== 第10章 ============================== -->
+<!-- ============================== 第8章（新設） ============================== -->
+<article class="view chapter" id="view-ch8" data-acc="c16" aria-labelledby="ch8-title">
   <header class="ch-hero">
     <div class="ch-hero-in">
-      <div class="ch-kicker"><span class="part-tag">応用編</span><span class="ch-num">07</span></div>
-      <h1 id="ch7-title">ブランドコンセプトを固める</h1>
+      <div class="ch-kicker"><span class="part-tag">上級編</span><span class="ch-num">08</span></div>
+      <h1 id="ch8-title">平均を出させない</h1>
+      <p class="ch-lead">ここから上級編です。AIの答えはなぜ、どこか「それっぽい」のか。仕組みで理解すれば、対策が打てます。みんなが同じAIを使う時代、平均から抜け出す技術こそが、あなたのブランドの差になります。</p>
+      <ul class="goals">
+        <li>AIの出力が「平均」に寄る理由を、仕組みから説明できる</li>
+        <li>文章の中の「AIっぽい表現」を見分けて、消せる</li>
+        <li>判断基準や実例を渡して、自分だけの答えを引き出す指示が書ける</li>
+      </ul>
+    </div>
+  </header>
+  <div class="ch-body">
+
+    <section class="rv">
+      <h2>「それっぽさ」の正体</h2>
+      <p>第2章を思い出してください。生成AIは「次に来そうな言葉」を確率で選ぶ機械でした。ここに重要な帰結があります。<mark>「一番ありそうな続き」とは、世界中の文章の平均</mark>だということです。</p>
+      <p>だから、ふつうに頼めばAIは、誰が読んでも違和感のない、そして<strong>誰の心にも刺さらない</strong>文章を返します。間違いではないのに退屈。褒めているのに顔が見えない。これが「AIっぽさ」の正体です。</p>
+      <p>そして今は、あなたの競合も同じAIを使っています。同じ道具に同じ頼み方をすれば、同じ平均が出てくる。つまり<strong>平均のまま使うことは、差別化ゼロ地点に立ち続けること</strong>です。逆に言えば、平均から抜ける技術を持つ人には、AIは強力な武器のままです。</p>
+    </section>
+
+    <section class="rv">
+      <h2>まず、AIっぽさを見分ける目を作る</h2>
+      <p>対策の前に、検出です。次の文章は「AIにふつうに頼んだ新作案内」という設定。<strong>AIっぽい表現が4か所</strong>あります。タップしてみてください。</p>
+      <div class="widget" id="avgspot">
+        <div class="widget-head"><span class="w-tag">さわって学ぶ</span><h3>AIっぽさを探せ</h3></div>
+        <div class="widget-body">
+          <p class="spot-text">新作のTシャツが入荷しました。<button class="spot" type="button" data-aspot="1">究極の着心地を追求した、大人のためのマストアイテムです。</button><button class="spot" type="button" data-aspot="2">上質なコットンを使用しているので、</button><button class="spot" type="button" data-aspot="3">どんなスタイルにも合わせやすいこと間違いなし！</button>サイズはS/M/Lの3展開です。<button class="spot" type="button" data-aspot="4">ぜひこの機会にチェックしてみてはいかがでしょうか。</button></p>
+          <p class="spot-score" id="avgScore">見つけたAIっぽさ：0 / 4</p>
+          <p style="margin:.6em 0 0"><button class="wbtn wbtn-acc" type="button" id="avgReveal">答え合わせをする</button></p>
+          <div class="spot-exp" id="avgExp">
+            <ul>
+              <li><strong>「究極の」「マストアイテム」</strong>：盛り言葉の連打。どのブランドのどの商品にも貼れる言葉は、何も言っていないのと同じです。</li>
+              <li><strong>「上質なコットン」</strong>：具体がゼロ。7.4オンスなのか、どこの綿なのか。第15章の商品説明で学んだ「不安つぶし」の逆で、ふわっとした形容は不信のもと。</li>
+              <li><strong>「〜こと間違いなし！」</strong>：根拠のない断定＋使い古された定型。読者は無意識に読み飛ばします。</li>
+              <li><strong>「チェックしてみてはいかがでしょうか」</strong>：AI定型文の王様。感情も行動の理由も入っていない締めの挨拶です。</li>
+            </ul>
+            <p>残した2文（入荷の事実、サイズ展開）は具体的な情報なので問題なし。<strong>消すべきは「事実と具体」以外の飾り</strong>、と覚えると精度が上がります。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rv">
+      <h2>平均から抜ける指示術 5つ</h2>
+      <p>検出できるようになったら、そもそも出させない側に回ります。効き目の大きい順に5つ。</p>
+      <ol>
+        <li><strong>判断基準を渡す</strong>：「私は、押しつけがましい売り文句が嫌い。短い文が好き。読んだ人が『自分の週末』を想像できる文章を良しとする」。あなたの良し悪しの物差しを渡せば、AIはその物差しで書きます。第10章のコンセプトシートに「好き嫌いリスト」を足しておくと毎回効きます。</li>
+        <li><strong>実例を見せる</strong>：好きなブランドの文章、心が動いた文を貼って「この温度感で」。第6章で学んだ「見せる」の応用で、百の形容詞より一つの実例です。</li>
+        <li><strong>禁止語リストを渡す</strong>：「究極、マスト、こだわりの、〜こと間違いなし、いかがでしょうか、は使用禁止」。上のゲームで見つけた表現を、自分の禁止語リストとして育てていきます。</li>
+        <li><strong>わざと端を出させて選ぶ</strong>：第4章の選択肢型で「攻めすぎなくらい大胆な案」を混ぜさせるのは、まさに平均回避の技でした。平均は選択肢の中央に、個性は端に現れます。</li>
+        <li><strong>一次情報を混ぜる</strong>：今日工場から届いた生地の手触り、試作品を着て歩いた駅までの体感。<mark>あなたしか知らない事実は、世界中のどのAIにも書けません</mark>。これが最強の差別化です。</li>
+      </ol>
+      <figure class="prompt-card">
+        <figcaption><span class="pc-label">プロンプト例</span><span class="pc-title">平均回避の前置き（文章仕事の頭に貼る）</span><span class="pc-tools">3ツール共通</span></figcaption>
+        <pre class="pc-body">これから文章づくりを頼みますが、先にお願いがあります。
+・どのブランドでも使い回せる決まり文句（究極の、こだわりの、マストアイテム、〜こと間違いなし、いかがでしょうか等）は使わないでください
+・盛った形容詞より、具体的な事実と数字で語ってください
+・私の判断基準：<em>（例：短い文が好き。売り込み臭が嫌い。読んだ人が自分の週末を想像できたら合格）</em>
+・迷ったら、無難な案と大胆な案の両方を出して、私に選ばせてください
+この前提で：<em>（本来の依頼を書く）</em></pre>
+        <div class="pc-foot"><button class="copy-btn" type="button">コピー</button><span class="pc-hint">禁止語は自分の観察で育てていく</span></div>
+      </figure>
+    </section>
+
+    <section class="rv">
+      <h2>仕上げは、あなたの一滴</h2>
+      <p>第17章で「AIの文に今日のできごとをひと言足す」という技を学びます。この章の言葉で言い直すと、あれは<strong>平均で作った土台に、一次情報の一滴を垂らす</strong>技術です。</p>
+      <p>順番を間違えないでください。AIに個性を出させようと粘るより、<mark>構造と下書きはAIの平均力に任せ、個性はあなたが最後に注ぐ</mark>方が、速くて確実です。AIは平均を出す道具。端へ引っ張るのは、いつだって人間の仕事です。</p>
+    </section>
+
+    <aside class="work rv">
+      <h2>実践ワーク：同じ依頼で平均と個性を見比べる</h2>
+      <ol>
+        <li>過去にAIに書かせた文章（またはいま何か1本書かせる）を用意する</li>
+        <li>同じ依頼を「平均回避の前置き」つきでもう一度頼む</li>
+        <li>2つを並べて、消えた決まり文句と生まれた具体を確認。気づいた禁止語をリストに足す</li>
+      </ol>
+    </aside>
+
+    <section class="quiz rv" aria-label="第8章のクイズ">
+      <h2>おさらいクイズ</h2>
+      <details class="q"><summary>Q1. AIの答えが平均に寄るのはなぜ？　第2章の仕組みから一言で。</summary>
+        <div class="q-a"><p><strong>答え</strong>：AIは「一番ありそうな続き」を確率で選ぶ機械で、一番ありそうな続きとは世界中の文章の平均だから。</p></div>
+      </details>
+      <details class="q"><summary>Q2. 「究極の着心地のマストアイテム」という文の問題点は？</summary>
+        <div class="q-a"><p><strong>答え</strong>：どのブランドのどの商品にも貼れる盛り言葉で、何も言っていないのと同じ。事実と具体（何オンスか、どんな場面の服か）に置き換える。</p></div>
+      </details>
+      <details class="q"><summary>Q3. 世界中のどのAIにも書けないものとは？</summary>
+        <div class="q-a"><p><strong>答え</strong>：あなたしか知らない一次情報（今日の出来事、実物の手触り、自分の体験）。平均の土台に一次情報の一滴を注ぐのが正しい分業でした。</p></div>
+      </details>
+    </section>
+
+  </div>
+  <div class="ch-end">
+    <button class="done-btn" type="button" data-done="ch8"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
+    <nav class="pager" aria-label="章の移動">
+      <a href="#/ch7" data-nav><span class="dir">前の章</span>07 AIの限界と付き合い方</a>
+      <a class="next" href="#/ch9" data-nav><span class="dir">次の章</span>09 手を動かすAI</a>
+    </nav>
+  </div>
+</article>
+
+<!-- ============================== 第9章（新設） ============================== -->
+<article class="view chapter" id="view-ch9" data-acc="c17" aria-labelledby="ch9-title">
+  <header class="ch-hero">
+    <div class="ch-hero-in">
+      <div class="ch-kicker"><span class="part-tag">上級編</span><span class="ch-num">09</span></div>
+      <h1 id="ch9-title">手を動かすAI：Claude CodeとCodex</h1>
+      <p class="ch-lead">これまでのAIは「賢い相談相手」でした。この章で紹介するのは、その一歩先。指示を出すと自分で手順を考え、実際にファイルを作り、作業を終わらせて戻ってくるAIです。今日使い始める必要はありません。世界の地図として、頭に入れておいてください。</p>
+      <ul class="goals">
+        <li>「会話するAI」と「エージェント型AI」の違いを説明できる</li>
+        <li>Claude CodeとCodexがそれぞれ何者かを、ひとことで言える</li>
+        <li>自分の仕事の中の「いつか任せたい繰り返し作業」を見つけられる</li>
+      </ul>
+    </div>
+  </header>
+  <div class="ch-body">
+
+    <section class="rv">
+      <h2>答えを返すAIから、仕事を終わらせるAIへ</h2>
+      <p>ChatGPTに「在庫管理表の作り方を教えて」と聞くと、作り方の説明が返ってきます。作るのはあなたです。一方、<span class="kw">エージェント</span>型のAIに「在庫管理表を作って」と頼むと、<mark>AIが自分で段取りを考え、ファイルを作り、動作を確かめて、完成品を持って戻ってきます</mark>。</p>
+      <p>違いは「答え」と「仕事」です。会話するAIは答えを返す。エージェントは仕事を終わらせる。2026年時点でこの分野を引っ張っているのが、次の2つです。</p>
+      <ul>
+        <li><strong>Claude Code（Anthropic）</strong>：Claudeの会社が作ったエージェント。パソコンの中やブラウザ上で、ファイルの作成や修正、作業の実行までを会話の指示でこなす。じっくり考えて丁寧に作るタイプと評されることが多い。</li>
+        <li><strong>Codex（OpenAI）</strong>：ChatGPTの会社が作ったエージェント。ChatGPTの有料プランから使い始められ、アプリやブラウザなど入り口が広い。並行してたくさんの作業を任せる使い方に強いと評されることが多い。</li>
+      </ul>
+      <p>料金はどちらも、各社の月20ドル前後の有料プランに含まれる形から始められます（2026年7月時点。上位プランや細かい制限は変わりやすいので公式で確認を）。</p>
+      <div class="case">
+        <h3>実話：この教科書は、Claude Codeが作りました</h3>
+        <p>いま読んでいるこのサイト自体が、エージェントの実例です。人間が「アパレルブランドを立ち上げる人のためのAI教科書を作って。読んで楽しく、さわれる仕掛けつきで」と日本語で指示し、Claude Codeが構成を考え、文章を書き、デザインを組み、動く仕掛けを実装し、ネット上への公開作業まで行いました。人間が書いたのは、指示と感想と「GO」だけ。エージェントとは、そういう働き方をするAIです。</p>
+      </div>
+    </section>
+
+    <section class="rv">
+      <h2>アパレル運営者に、何ができるのか</h2>
+      <p>「プログラミングのAIでしょう？　服屋には関係ない」と思うかもしれません。実際は、<strong>ひとりブランドの「ちょっとしたツールが欲しい」を叶える道具</strong>です。たとえば。</p>
+      <ul>
+        <li><strong>在庫と売上の管理表</strong>：色サイズ別の在庫を入力すると、残数と売れ筋が一目でわかる自分専用の表やページを作らせる</li>
+        <li><strong>写真の一括処理</strong>：撮影した100枚の商品写真を、商品名つきのファイル名に一括で変えさせる</li>
+        <li><strong>簡単な特設ページ</strong>：新作発表用の1枚ページを、世界観シートを渡して作らせる</li>
+        <li><strong>繰り返し作業の自動化</strong>：毎月の売上メモから、第19章のふりかえり用サマリーを自動で作る仕組み</li>
+      </ul>
+      <p>これまで「外注するほどでもないが、自分では作れない」と諦めていた領域が、月20ドルの相棒の守備範囲になった。これがエージェント時代の一番の変化です。</p>
+    </section>
+
+    <section class="rv">
+      <h2>はじめての一歩と、注意書き</h2>
+      <p>急ぐ必要はありません。<mark>まずは会話するAIを使い倒すのが先</mark>です。そのうえで、こんな瞬間が来たら、この章を思い出してください。</p>
+      <ul>
+        <li>同じ手作業を毎週繰り返していることに気づいたとき</li>
+        <li>「こういう小さなツールがあればいいのに」と3回目に思ったとき</li>
+        <li>ネットショップのページを、テンプレートの外まで作り込みたくなったとき</li>
+      </ul>
+      <p>始めるときの注意も3つだけ。</p>
+      <ol>
+        <li><strong>内容がわからない指示を実行させない</strong>：エージェントは実際にファイルを変更します。「何をしようとしているか」の説明を求め、わからなければ進めない。第7章の「下書きと正本」の精神は、作業でも同じです。</li>
+        <li><strong>大事なファイルはバックアップしてから</strong>：写真の一括処理などは、必ずコピーで試す。</li>
+        <li><strong>料金と上限を確認</strong>：使い放題ではなく、プランごとに利用量の上限があります。最初は小さな仕事から。</li>
+      </ol>
+      <figure class="prompt-card">
+        <figcaption><span class="pc-label">プロンプト例</span><span class="pc-title">エージェントへの最初の頼み方（いつか使う日のために）</span><span class="pc-tools">Claude Code / Codex</span></figcaption>
+        <pre class="pc-body">はじめてエージェントを使います。<em>（作りたいもの。例：色サイズ別の在庫が一目でわかる、ブラウザで開ける管理表）</em>を作ってほしい。
+・まず、何をどんな手順で作るつもりか、専門用語を使わずに説明してください
+・私が理解して「OK」と言ってから作業を始めてください
+・完成したら、使い方を3行で教えてください</pre>
+        <div class="pc-foot"><button class="copy-btn" type="button">コピー</button><span class="pc-hint">「説明→OK→実行」の順を最初に約束させるのが安全</span></div>
+      </figure>
+    </section>
+
+    <aside class="work rv">
+      <h2>実践ワーク：未来の依頼リストを作る</h2>
+      <ol>
+        <li>自分のブランド準備や生活の中で「繰り返している作業」を3つ書き出す</li>
+        <li>それぞれに「ツールがあるとしたら、どんな画面で何ができるか」を1行ずつ添える</li>
+        <li>そのメモをコンセプトシートの隣に保存する。エージェントを始める日、それがそのまま最初の依頼文になります</li>
+      </ol>
+    </aside>
+
+    <section class="quiz rv" aria-label="第9章のクイズ">
+      <h2>おさらいクイズ</h2>
+      <details class="q"><summary>Q1. 会話するAIとエージェント型AIの違いを一言で。</summary>
+        <div class="q-a"><p><strong>答え</strong>：会話するAIは「答え」を返し、エージェントは自分で段取りを考えて「仕事」を終わらせる。Claude CodeとCodexが代表格でした。</p></div>
+      </details>
+      <details class="q"><summary>Q2. エージェントに作業を頼むとき、最初に約束させるべき手順は？</summary>
+        <div class="q-a"><p><strong>答え</strong>：「先に段取りを説明→こちらが理解してOKを出す→実行」。内容がわからないまま実行させない、が安全の基本でした。</p></div>
+      </details>
+    </section>
+
+  </div>
+  <div class="ch-end">
+    <button class="done-btn" type="button" data-done="ch9"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
+    <nav class="pager" aria-label="章の移動">
+      <a href="#/ch8" data-nav><span class="dir">前の章</span>08 平均を出させない</a>
+      <a class="next" href="#/ch10" data-nav><span class="dir">次の章</span>10 ブランドコンセプトを固める</a>
+    </nav>
+  </div>
+</article>
+<article class="view chapter" id="view-ch10" data-acc="c7" aria-labelledby="ch10-title">
+  <header class="ch-hero">
+    <div class="ch-hero-in">
+      <div class="ch-kicker"><span class="part-tag">応用編</span><span class="ch-num">10</span></div>
+      <h1 id="ch10-title">ブランドコンセプトを固める</h1>
       <p class="ch-lead">ここから応用編です。学んだ道具を握って、いよいよブランドづくりの現場へ。最初の仕事は、すべての判断の物差しになる「コンセプト」を言葉にすることです。</p>
       <ul class="goals">
         <li>コンセプトを「誰に、なにを、なぜ」の3点で言葉にできる</li>
@@ -1378,7 +1740,7 @@ td .tag-n{color:var(--ink-3)}
       </div>
       <aside class="note-warn note">
         <h3>先にひとつだけ</h3>
-        <p>応用編でもAIの答えは「下書き」です。とくに市場の数字、法律、費用の話は、第6章の裏取り習慣（下書きと正本を分ける）を常に添えて読み進めてください。</p>
+        <p>応用編でもAIの答えは「下書き」です。とくに市場の数字、法律、費用の話は、第7章の裏取り習慣（下書きと正本を分ける）を常に添えて読み進めてください。</p>
       </aside>
     </section>
 
@@ -1453,10 +1815,10 @@ td .tag-n{color:var(--ink-3)}
         <li>できたコンセプトシートを、ペルソナ3人に「どう思うか」聞いてみる</li>
         <li>違和感のある部分を直して、完成版をメモ帳に保存する</li>
       </ol>
-      <p>ここで作った1枚が、第8章以降のすべての材料になります。</p>
+      <p>ここで作った1枚が、第11章以降のすべての材料になります。</p>
     </aside>
 
-    <section class="quiz rv" aria-label="第7章のクイズ">
+    <section class="quiz rv" aria-label="第10章のクイズ">
       <h2>おさらいクイズ</h2>
       <details class="q"><summary>Q1. コンセプトの3点セットとは？　そのうちAIに作れないものは？</summary>
         <div class="q-a"><p><strong>答え</strong>：「誰に、なにを、なぜ」。このうち「なぜ」（あなたがやる理由、原体験）だけはAIには作れず、質問されながら自分の中から掘り出すものでした。</p></div>
@@ -1471,20 +1833,20 @@ td .tag-n{color:var(--ink-3)}
 
   </div>
   <div class="ch-end">
-    <button class="done-btn" type="button" data-done="ch7"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
+    <button class="done-btn" type="button" data-done="ch10"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
     <nav class="pager" aria-label="章の移動">
-      <a href="#/ch6" data-nav><span class="dir">前の章</span>06 AIの限界と付き合い方</a>
-      <a class="next" href="#/ch8" data-nav><span class="dir">次の章</span>08 ブランド名と世界観をつくる</a>
+      <a href="#/ch9" data-nav><span class="dir">前の章</span>09 手を動かすAI</a>
+      <a class="next" href="#/ch11" data-nav><span class="dir">次の章</span>11 ブランド名と世界観をつくる</a>
     </nav>
   </div>
 </article>
 
-<!-- ============================== 第8章 ============================== -->
-<article class="view chapter" id="view-ch8" data-acc="c8" aria-labelledby="ch8-title">
+<!-- ============================== 第11章 ============================== -->
+<article class="view chapter" id="view-ch11" data-acc="c8" aria-labelledby="ch11-title">
   <header class="ch-hero">
     <div class="ch-hero-in">
-      <div class="ch-kicker"><span class="part-tag">応用編</span><span class="ch-num">08</span></div>
-      <h1 id="ch8-title">ブランド名と世界観をつくる</h1>
+      <div class="ch-kicker"><span class="part-tag">応用編</span><span class="ch-num">11</span></div>
+      <h1 id="ch11-title">ブランド名と世界観をつくる</h1>
       <p class="ch-lead">名前は、ブランドがお客さまに触れる最初のひと針です。AIは名前の候補出しが大の得意。ただし「決める」と「確かめる」は人間の仕事。世界観の言語化までを一気に進めます。</p>
       <ul class="goals">
         <li>条件を決めてから、AIで名前の候補を大量に出し、絞り込める</li>
@@ -1535,7 +1897,7 @@ td .tag-n{color:var(--ink-3)}
       </ol>
       <aside class="note-warn note">
         <h3>ありがちな事故</h3>
-        <p>AIに「この名前は商標登録されていますか？」と聞いて、「されていません」という答えを信じてしまう事故が実際にあります。商標の有無はAIには確認できません。<strong>J-PlatPatで自分の目で確認</strong>。これは第6章の裏取り習慣の、最初の本番です。</p>
+        <p>AIに「この名前は商標登録されていますか？」と聞いて、「されていません」という答えを信じてしまう事故が実際にあります。商標の有無はAIには確認できません。<strong>J-PlatPatで自分の目で確認</strong>。これは第7章の裏取り習慣の、最初の本番です。</p>
       </aside>
     </section>
 
@@ -1567,7 +1929,7 @@ td .tag-n{color:var(--ink-3)}
       <p>本番のロゴは、ラフを参考資料にして自分でデザインツール（Canvaなど）で組むか、デザイナーに依頼します。依頼するときも、AIと作った「世界観シート＋方向性ラフ」があると、打ち合わせの質がまるで違います。</p>
       <aside class="note">
         <h3>注意：文字入りロゴの生成</h3>
-        <p>画像生成AIは、画像の中の文字をよく間違えます（アルファベットの綴りが崩れるなど）。文字入りロゴの完成品づくりには不向きで、これも「方向性探しまで」と割り切る理由のひとつです。生成画像の商用利用条件の確認も忘れずに（第6章）。</p>
+        <p>画像生成AIは、画像の中の文字をよく間違えます（アルファベットの綴りが崩れるなど）。文字入りロゴの完成品づくりには不向きで、これも「方向性探しまで」と割り切る理由のひとつです。生成画像の商用利用条件の確認も忘れずに（第7章）。</p>
       </aside>
     </section>
 
@@ -1581,7 +1943,7 @@ td .tag-n{color:var(--ink-3)}
       <p>検証まで通した名前は、たとえ仮でも愛着が変わります。</p>
     </aside>
 
-    <section class="quiz rv" aria-label="第8章のクイズ">
+    <section class="quiz rv" aria-label="第11章のクイズ">
       <h2>おさらいクイズ</h2>
       <details class="q"><summary>Q1. AIに良い名前の候補を出させるために、先にやるべきことは？</summary>
         <div class="q-a"><p><strong>答え</strong>：名前の条件（読みやすさ、言語の雰囲気、込めたい意味、避けたいもの）を自分で決めること。条件出しが9割でした。</p></div>
@@ -1596,19 +1958,19 @@ td .tag-n{color:var(--ink-3)}
 
   </div>
   <div class="ch-end">
-    <button class="done-btn" type="button" data-done="ch8"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
+    <button class="done-btn" type="button" data-done="ch11"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
     <nav class="pager" aria-label="章の移動">
-      <a href="#/ch7" data-nav><span class="dir">前の章</span>07 ブランドコンセプトを固める</a>
-      <a class="next" href="#/ch9" data-nav><span class="dir">次の章</span>09 商品企画とデザイン</a>
+      <a href="#/ch10" data-nav><span class="dir">前の章</span>10 ブランドコンセプトを固める</a>
+      <a class="next" href="#/ch12" data-nav><span class="dir">次の章</span>12 商品企画とデザイン</a>
     </nav>
   </div>
 </article>
-<!-- ============================== 第9章 ============================== -->
-<article class="view chapter" id="view-ch9" data-acc="c9" aria-labelledby="ch9-title">
+<!-- ============================== 第12章 ============================== -->
+<article class="view chapter" id="view-ch12" data-acc="c9" aria-labelledby="ch12-title">
   <header class="ch-hero">
     <div class="ch-hero-in">
-      <div class="ch-kicker"><span class="part-tag">応用編</span><span class="ch-num">09</span></div>
-      <h1 id="ch9-title">商品企画とデザイン</h1>
+      <div class="ch-kicker"><span class="part-tag">応用編</span><span class="ch-num">12</span></div>
+      <h1 id="ch12-title">商品企画とデザイン</h1>
       <p class="ch-lead">コンセプトと名前ができたら、いよいよ服そのものです。企画の絞り込み、デザイン案の展開、画像生成AIでのラフづくり、そして工場に渡す仕様書の入り口までを歩きます。</p>
       <ul class="goals">
         <li>最初の商品構成を「少なく深く」の方針で決められる</li>
@@ -1674,7 +2036,7 @@ td .tag-n{color:var(--ink-3)}
       <p>着用イメージ（モデルが公園で着ている雰囲気カットなど）も同じ要領で作れます。世界観シートの「写真の方向性」を貼り付けると、ブランドの空気をまとった画像になります。</p>
       <aside class="note-warn note">
         <h3>ラフと図面は別物</h3>
-        <p>生成画像は「イメージの共有」には抜群ですが、縫える図面ではありません。左右の袖の形が微妙に違う、ステッチが物理的にありえない、そんな画像が平気で出ます。工場に渡すのは次の仕様書。生成画像は参考イメージとして添える、が正しい役割分担です。他ブランドの柄やロゴが混ざっていないかのチェックも忘れずに（第6章）。</p>
+        <p>生成画像は「イメージの共有」には抜群ですが、縫える図面ではありません。左右の袖の形が微妙に違う、ステッチが物理的にありえない、そんな画像が平気で出ます。工場に渡すのは次の仕様書。生成画像は参考イメージとして添える、が正しい役割分担です。他ブランドの柄やロゴが混ざっていないかのチェックも忘れずに（第7章）。</p>
       </aside>
     </section>
 
@@ -1703,12 +2065,12 @@ td .tag-n{color:var(--ink-3)}
       <ol>
         <li>デザイン展開マトリクスで8案出し、1案選ぶ</li>
         <li>その案を画像生成で3枚（商品単体、色違い、着用イメージ）作る</li>
-        <li>ペルソナに見せて（第7章の要領）、感想を聞いてみる</li>
+        <li>ペルソナに見せて（第10章の要領）、感想を聞いてみる</li>
       </ol>
       <p>画像があると、人に意見を聞くのも一気にやりやすくなります。</p>
     </aside>
 
-    <section class="quiz rv" aria-label="第9章のクイズ">
+    <section class="quiz rv" aria-label="第12章のクイズ">
       <h2>おさらいクイズ</h2>
       <details class="q"><summary>Q1. 立ち上げ時の商品構成の定石は？</summary>
         <div class="q-a"><p><strong>答え</strong>：「少なく、深く」。1〜2型に絞って語り尽くす。型数を増やすほど資金、在庫リスク、管理の手間が膨らむのでした。</p></div>
@@ -1723,20 +2085,20 @@ td .tag-n{color:var(--ink-3)}
 
   </div>
   <div class="ch-end">
-    <button class="done-btn" type="button" data-done="ch9"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
+    <button class="done-btn" type="button" data-done="ch12"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
     <nav class="pager" aria-label="章の移動">
-      <a href="#/ch8" data-nav><span class="dir">前の章</span>08 ブランド名と世界観をつくる</a>
-      <a class="next" href="#/ch10" data-nav><span class="dir">次の章</span>10 生産と原価の考え方</a>
+      <a href="#/ch11" data-nav><span class="dir">前の章</span>11 ブランド名と世界観をつくる</a>
+      <a class="next" href="#/ch13" data-nav><span class="dir">次の章</span>13 生産と原価の考え方</a>
     </nav>
   </div>
 </article>
 
-<!-- ============================== 第10章 ============================== -->
-<article class="view chapter" id="view-ch10" data-acc="c10" aria-labelledby="ch10-title">
+<!-- ============================== 第13章 ============================== -->
+<article class="view chapter" id="view-ch13" data-acc="c10" aria-labelledby="ch13-title">
   <header class="ch-hero">
     <div class="ch-hero-in">
-      <div class="ch-kicker"><span class="part-tag">応用編</span><span class="ch-num">10</span></div>
-      <h1 id="ch10-title">生産と原価の考え方</h1>
+      <div class="ch-kicker"><span class="part-tag">応用編</span><span class="ch-num">13</span></div>
+      <h1 id="ch13-title">生産と原価の考え方</h1>
       <p class="ch-lead">ものづくりとお金の章です。作り方の選択肢、値段の決め方、工場とのやり取り。数字が苦手でも大丈夫。計算機を触りながら、価格の勘所を体で覚えましょう。</p>
       <ul class="goals">
         <li>生産方法の選択肢（自作、小ロット工場、プリントオンデマンド）を比較できる</li>
@@ -1837,11 +2199,11 @@ td .tag-n{color:var(--ink-3)}
       <ol>
         <li>作りたい商品の原価を、ざっくりでいいので3項目（材料、加工、梱包配送）で見積もる。相場がわからない項目は、AIに「一般的な目安」を聞いてから裏取りする</li>
         <li>上の計算機に入れて、利益率を動かしながら「売れそうで、自分も苦しくない」価格を探す</li>
-        <li>出てきた価格を、第7章のペルソナにぶつけて反応を見る</li>
+        <li>出てきた価格を、第10章のペルソナにぶつけて反応を見る</li>
       </ol>
     </aside>
 
-    <section class="quiz rv" aria-label="第10章のクイズ">
+    <section class="quiz rv" aria-label="第13章のクイズ">
       <h2>おさらいクイズ</h2>
       <details class="q"><summary>Q1. 在庫リスクゼロで需要を試せる生産方法は？　その弱点は？</summary>
         <div class="q-a"><p><strong>答え</strong>：プリントオンデマンド（注文ごとに1枚ずつ生産）。弱点は1枚あたりの原価が高く利益が薄いこと、既成ボディの範囲でしか作れないこと。</p></div>
@@ -1856,19 +2218,158 @@ td .tag-n{color:var(--ink-3)}
 
   </div>
   <div class="ch-end">
-    <button class="done-btn" type="button" data-done="ch10"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
+    <button class="done-btn" type="button" data-done="ch13"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
     <nav class="pager" aria-label="章の移動">
-      <a href="#/ch9" data-nav><span class="dir">前の章</span>09 商品企画とデザイン</a>
-      <a class="next" href="#/ch11" data-nav><span class="dir">次の章</span>11 ネットショップを開く</a>
+      <a href="#/ch12" data-nav><span class="dir">前の章</span>12 商品企画とデザイン</a>
+      <a class="next" href="#/ch14" data-nav><span class="dir">次の章</span>14 自己資金と資金繰り</a>
     </nav>
   </div>
 </article>
-<!-- ============================== 第11章 ============================== -->
-<article class="view chapter" id="view-ch11" data-acc="c11" aria-labelledby="ch11-title">
+<!-- ============================== 第15章 ============================== -->
+<!-- ============================== 第14章（新設） ============================== -->
+<article class="view chapter" id="view-ch14" data-acc="c18" aria-labelledby="ch14-title">
   <header class="ch-hero">
     <div class="ch-hero-in">
-      <div class="ch-kicker"><span class="part-tag">応用編</span><span class="ch-num">11</span></div>
-      <h1 id="ch11-title">ネットショップを開く</h1>
+      <div class="ch-kicker"><span class="part-tag">応用編</span><span class="ch-num">14</span></div>
+      <h1 id="ch14-title">自己資金と資金繰り</h1>
+      <p class="ch-lead">第13章で「1着の値段」を組めるようになりました。この章はその一段上、「ブランド全体のお金」の話です。結局いくら用意すれば始められるのか。シミュレーターを動かしながら、自分の答えを見つけましょう。</p>
+      <ul class="goals">
+        <li>立ち上げに必要な初期費用を、項目に分解して見積もれる</li>
+        <li>発注ロットを変えると必要資金と回収ラインがどう動くか、体感で説明できる</li>
+        <li>資金が尽きる典型パターンを知り、自分の「守りのルール」を決められる</li>
+      </ul>
+    </div>
+  </header>
+  <div class="ch-body">
+
+    <section class="rv">
+      <h2>初期費用の解剖図</h2>
+      <p>立ち上げのお金は、大きく4つに分解できます。</p>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>項目</th><th>中身</th><th>特徴</th></tr></thead>
+        <tbody>
+          <tr><td><strong>生産費</strong></td><td>ロット数×1着あたりの生産原価（第13章で計算したもの）</td><td>最大の塊。ロット数で大きく動く</td></tr>
+          <tr><td><strong>サンプル・型代</strong></td><td>試作サンプル（往復数回分）、パターン（型紙）作成費</td><td>売り物にならないが、削ると本番で泣く</td></tr>
+          <tr><td><strong>そのほか初期費用</strong></td><td>撮影（機材や小物）、梱包資材、下げ札やタグ、ショップ開設まわり</td><td>ひとつずつは小さいのに、合計すると効いてくる</td></tr>
+          <tr><td><strong>予備費</strong></td><td>上記合計の1割程度</td><td>不良対応、送り直し、想定外。必ず起きるので最初から積む</td></tr>
+        </tbody>
+      </table></div>
+      <p>そして忘れてはいけないのが、<mark>この全額が「売れる前」に出ていく</mark>ことです。お金の流れはいつも、払うのが先、入ってくるのが後。この時間差こそが「資金繰り」という言葉の中身です。</p>
+    </section>
+
+    <section class="rv">
+      <h2>資金シミュレーターで「自分の数字」を作る</h2>
+      <p>ロットのスライダーを動かしてみてください。必要な自己資金、その内訳、そして<strong>何枚売れたら資金を回収できるか</strong>が連動して変わります。数字は第13章の原価計算機で出した値を使うと、あなたのブランドの試算になります。</p>
+
+      <div class="widget" id="fundcalc">
+        <div class="widget-head"><span class="w-tag">さわって学ぶ</span><h3>自己資金シミュレーター</h3></div>
+        <div class="widget-body">
+          <div class="cc-grid">
+            <form autocomplete="off">
+              <label>発注ロット（作る枚数）
+                <input type="range" id="fcLot" value="100" min="30" max="300" step="10" aria-describedby="fcLotVal">
+                <span class="cc-row"><span class="unit" id="fcLotVal" style="font-size:.95rem;font-weight:800;color:var(--acc)">100枚</span></span></label>
+              <label>1着あたりの生産原価（材料＋縫製＋タグ等）
+                <span class="cc-row"><input type="number" id="fcCost" value="2700" min="0" step="50" inputmode="numeric"><span class="unit">円</span></span></label>
+              <label>サンプル・型代（試作と型紙の合計）
+                <span class="cc-row"><input type="number" id="fcSample" value="60000" min="0" step="5000" inputmode="numeric"><span class="unit">円</span></span></label>
+              <label>そのほか初期費用（撮影、資材、開設まわり）
+                <span class="cc-row"><input type="number" id="fcFixed" value="50000" min="0" step="5000" inputmode="numeric"><span class="unit">円</span></span></label>
+              <label>販売価格（1着）
+                <span class="cc-row"><input type="number" id="fcPrice" value="5900" min="0" step="100" inputmode="numeric"><span class="unit">円</span></span></label>
+              <label>販売手数料率
+                <span class="cc-row"><input type="number" id="fcFee" value="7" min="0" max="40" step="0.5" inputmode="decimal"><span class="unit">%</span></span></label>
+            </form>
+            <div class="cc-out" aria-live="polite">
+              <div>用意しておきたい自己資金の目安</div>
+              <div class="big" id="fcTotal">—<small> 円</small></div>
+              <div class="cc-bars">
+                <div class="cc-bar"><span>生産費</span><span class="track"><span class="fill" id="fcBarProd"></span></span><span id="fcValProd">—</span></div>
+                <div class="cc-bar"><span>サンプル・型代</span><span class="track"><span class="fill" id="fcBarSample"></span></span><span id="fcValSample">—</span></div>
+                <div class="cc-bar"><span>そのほか初期</span><span class="track"><span class="fill" id="fcBarFixed"></span></span><span id="fcValFixed">—</span></div>
+                <div class="cc-bar"><span>予備費（10%）</span><span class="track"><span class="fill" id="fcBarReserve"></span></span><span id="fcValReserve">—</span></div>
+              </div>
+              <p style="font-size:.85rem;margin:.9em 0 0">回収ライン：<strong id="fcBreak">—</strong><br>
+              <span style="color:var(--ink-3);font-size:.8rem">（手数料を引いた売上で自己資金を取り戻せる枚数）</span></p>
+              <p style="font-size:.85rem;margin:.4em 0 0">完売できたら手元に残るお金：<strong id="fcProfit">—</strong></p>
+              <p class="cc-warn" id="fcWarn">この条件では、完売しても自己資金を回収できません。価格か原価かロットを見直してください。</p>
+            </div>
+          </div>
+          <p class="w-note">数字はすべて概算の道具です。実際の見積もりが出たら、その数字で入れ直してください。</p>
+        </div>
+      </div>
+
+      <p>動かしてみると、体で分かることが2つあります。ひとつ、<strong>ロットを増やすと1着の原価は下がっても、必要資金と回収ラインは重くなる</strong>こと。ふたつ、回収ラインがロットの半分を超えるような計画は、半分売れ残っただけで赤字になる、綱渡りの計画だということです。</p>
+    </section>
+
+    <section class="rv">
+      <h2>資金が尽きる、3つの典型</h2>
+      <p>小さなブランドがつまずくパターンは、だいたい決まっています。</p>
+      <ol>
+        <li><strong>初回ロットが大きすぎる</strong>：「1着あたりが安くなるから」と300枚。売れ残りは、お金が服の形で棚に積まれている状態です。現金に戻したくても、セールで価値ごと溶けていく。</li>
+        <li><strong>売上を全部、次の仕入れに回す</strong>：好調に見えて、手元の現金が常にゼロ。返品や不良がひとつ起きた瞬間に詰みます。</li>
+        <li><strong>予備費ゼロの計画</strong>：想定外は想定より必ず多い。送り直し、撮影のやり直し、追加のサンプル。1割の予備は「もしも」ではなく「いつもの」費用です。</li>
+      </ol>
+      <p>守りのルールはシンプルに3つ。<mark>ブランドのお金は生活費と別の口座に分ける。入れるのは「失っても生活が壊れない額」まで。最初のロットは怖いくらい小さく</mark>（第12章の「少なく、深く」は、お金の守りでもあったのです）。</p>
+    </section>
+
+    <section class="rv">
+      <h2>AIの使い所：計算させるな、点検させよ</h2>
+      <p>お金の章でのAIの正しい使い方は、第2章で学んだ得意不得意そのままです。<strong>計算はシミュレーターや表計算の仕事</strong>（AIは桁の多い計算を間違えることがある）。AIに任せるのは、計画の抜け漏れ探しと、考えの整理です。</p>
+      <figure class="prompt-card">
+        <figcaption><span class="pc-label">プロンプト例</span><span class="pc-title">資金計画の壁打ち</span><span class="pc-tools">3ツール共通</span></figcaption>
+        <pre class="pc-body">アパレルブランド立ち上げの資金計画を点検してください。あなたは慎重な財務の相談役です。
+私の計画：
+<em>・自己資金：◯円（生活費とは別）
+・初回ロット：◯枚、1着あたり生産原価◯円、販売価格◯円
+・サンプル・型代：◯円、そのほか初期費用：◯円
+・回収ライン：◯枚（シミュレーターで計算済み）</em>
+
+1. この計画で見落としていそうな費用を挙げてください
+2. 「もし半分しか売れなかったら」の場合に何が起きるか、時系列で描写してください
+3. 計画を守りに寄せるなら、どの数字から直すべきか1つだけ選んでください
+数字の計算はこちらで済ませているので、計算のやり直しではなく、考え方の点検をお願いします。</pre>
+        <div class="pc-foot"><button class="copy-btn" type="button">コピー</button><span class="pc-hint">「半分しか売れなかったら」を必ず見ておく</span></div>
+      </figure>
+    </section>
+
+    <aside class="work rv">
+      <h2>実践ワーク：3つのロットで未来を見る</h2>
+      <ol>
+        <li>シミュレーターにロット30、100、300を順に入れ、必要資金と回収ラインをメモする</li>
+        <li>自分の「失っても生活が壊れない額」を正直に1つ決める</li>
+        <li>その額に収まる計画を1つ選び、壁打ちプロンプトでAIに点検させる</li>
+      </ol>
+    </aside>
+
+    <section class="quiz rv" aria-label="第14章のクイズ">
+      <h2>おさらいクイズ</h2>
+      <details class="q"><summary>Q1. 「資金繰り」という言葉の中身を、お金の流れで説明すると？</summary>
+        <div class="q-a"><p><strong>答え</strong>：払うのが先、入ってくるのが後、という時間差のこと。初期費用は全額「売れる前」に出ていくのでした。</p></div>
+      </details>
+      <details class="q"><summary>Q2. ロットを増やすと1着の原価は下がる。では何が重くなる？</summary>
+        <div class="q-a"><p><strong>答え</strong>：必要な自己資金の総額と、回収ライン（回収に必要な販売枚数）。回収ラインがロットの半分を超える計画は綱渡りでした。</p></div>
+      </details>
+      <details class="q"><summary>Q3. 資金計画でAIに任せてよいことと、いけないことは？</summary>
+        <div class="q-a"><p><strong>答え</strong>：任せてよいのは抜け漏れの点検と「半分しか売れなかったら」の想像。いけないのは計算そのもの（表計算とシミュレーターの仕事）。</p></div>
+      </details>
+    </section>
+
+  </div>
+  <div class="ch-end">
+    <button class="done-btn" type="button" data-done="ch14"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
+    <nav class="pager" aria-label="章の移動">
+      <a href="#/ch13" data-nav><span class="dir">前の章</span>13 生産と原価の考え方</a>
+      <a class="next" href="#/ch15" data-nav><span class="dir">次の章</span>15 ネットショップを開く</a>
+    </nav>
+  </div>
+</article>
+
+<article class="view chapter" id="view-ch15" data-acc="c11" aria-labelledby="ch15-title">
+  <header class="ch-hero">
+    <div class="ch-hero-in">
+      <div class="ch-kicker"><span class="part-tag">応用編</span><span class="ch-num">15</span></div>
+      <h1 id="ch15-title">ネットショップを開く</h1>
       <p class="ch-lead">商品ができたら、売り場です。どこに店を出すか、商品ページになにを書くか、写真をどう撮るか。開店準備の実務を、AIと二人三脚で片づけていきます。</p>
       <ul class="goals">
         <li>販売プラットフォームの種類と選び方を説明できる</li>
@@ -1969,7 +2470,7 @@ td .tag-n{color:var(--ink-3)}
       </ol>
     </aside>
 
-    <section class="quiz rv" aria-label="第11章のクイズ">
+    <section class="quiz rv" aria-label="第15章のクイズ">
       <h2>おさらいクイズ</h2>
       <details class="q"><summary>Q1. 商品ページの文章の、いちばん大事な仕事は？</summary>
         <div class="q-a"><p><strong>答え</strong>：買う人の不安（サイズ、生地感、色、返品）に先回りして答えること。きれいな言葉より不安つぶし、でした。</p></div>
@@ -1984,20 +2485,127 @@ td .tag-n{color:var(--ink-3)}
 
   </div>
   <div class="ch-end">
-    <button class="done-btn" type="button" data-done="ch11"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
+    <button class="done-btn" type="button" data-done="ch15"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
     <nav class="pager" aria-label="章の移動">
-      <a href="#/ch10" data-nav><span class="dir">前の章</span>10 生産と原価の考え方</a>
-      <a class="next" href="#/ch12" data-nav><span class="dir">次の章</span>12 SNSで知ってもらう</a>
+      <a href="#/ch14" data-nav><span class="dir">前の章</span>14 自己資金と資金繰り</a>
+      <a class="next" href="#/ch16" data-nav><span class="dir">次の章</span>16 法とルールの守り</a>
     </nav>
   </div>
 </article>
 
-<!-- ============================== 第12章 ============================== -->
-<article class="view chapter" id="view-ch12" data-acc="c12" aria-labelledby="ch12-title">
+<!-- ============================== 第17章 ============================== -->
+<!-- ============================== 第16章（新設） ============================== -->
+<article class="view chapter" id="view-ch16" data-acc="c19" aria-labelledby="ch16-title">
   <header class="ch-hero">
     <div class="ch-hero-in">
-      <div class="ch-kicker"><span class="part-tag">応用編</span><span class="ch-num">12</span></div>
-      <h1 id="ch12-title">SNSで知ってもらう</h1>
+      <div class="ch-kicker"><span class="part-tag">応用編</span><span class="ch-num">16</span></div>
+      <h1 id="ch16-title">法とルールの守り</h1>
+      <p class="ch-lead">開店の直前に、守りを固めます。これまで各章に散らばっていた法律の話を、ひとつの地図にまとめる章です。おどかす話ではありません。知ってさえいれば、ほとんどは数時間の確認で避けられる落とし穴ばかりです。</p>
+      <ul class="goals">
+        <li>ブランド運営に関わるルールを「名前、デザイン、売り方、取引」の4領域で説明できる</li>
+        <li>商標の先願主義を理解し、出願を検討すべきタイミングを判断できる</li>
+        <li>広告や商品ページで使ってはいけない表現の型を見分けられる</li>
+      </ul>
+    </div>
+  </header>
+  <div class="ch-body">
+
+    <section class="rv">
+      <h2>守りの全体地図：4つの領域</h2>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>領域</th><th>主なルール</th><th>この本での初出</th></tr></thead>
+        <tbody>
+          <tr><td><strong>名前</strong></td><td>商標（ブランド名、ロゴ）</td><td>第11章で検索だけ体験</td></tr>
+          <tr><td><strong>デザイン</strong></td><td>著作権、意匠、模倣まわり。生成AI画像の扱い</td><td>第7章で入り口だけ</td></tr>
+          <tr><td><strong>売り方</strong></td><td>品質表示、洗濯表示、景品表示法、特定商取引法</td><td>第7章と第15章に断片</td></tr>
+          <tr><td><strong>取引</strong></td><td>工場との約束ごと（発注書、検品基準）</td><td>この章が初めて</td></tr>
+        </tbody>
+      </table></div>
+      <p>先にこの章の結論を言っておきます。<mark>調べる下働きはAIに、事実の確認は公的な一次情報で、最終判断は専門家に</mark>。第7章の「下書きと正本」を、法律の世界でそのまま使うだけです。</p>
+    </section>
+
+    <section class="rv">
+      <h2>名前の守り：商標は「早い者勝ち」</h2>
+      <p>いちばん誤解が多いのがここです。日本の商標は<span class="kw">先願主義</span>、つまり<strong>先に使っていた人ではなく、先に出願した人が権利を取る</strong>のが原則です。あなたが3年育てた名前でも、他人が先に出願すれば、名前を変えるのはあなたの側になりえます。</p>
+        <ul>
+        <li><strong>最低限（無料）</strong>：第11章でやったとおり、J-PlatPatで同じ、似た名前が「被服」まわり（区分でいうと25類が中心）に登録されていないか確認する。ロゴを作ったらロゴでも。</li>
+        <li><strong>育てる覚悟が決まったら</strong>：自分での出願も可能ですが、区分の選び方などで専門知識が効くため、弁理士への相談が現実的。費用は出願から登録まで、1区分あたり数万円台からが目安です（2026年7月時点の相場感。依頼内容で大きく変わるので必ず見積もりを）。</li>
+        <li><strong>タイミングの考え方</strong>：売れてから出願を考えると、売れた瞬間がいちばん危ない（露出した名前は狙われうる）。SNSで手応えが出はじめた頃が、検討の合図です。</li>
+      </ul>
+    </section>
+
+    <section class="rv">
+      <h2>デザインの守り：真似しない、真似されたら</h2>
+      <ul>
+        <li><strong>他ブランドのロゴ、キャラクター、特徴的な柄は使わない</strong>：第7章の約束の再確認。「〜風」の指示で生成した画像も、特徴が残っていれば同じリスクです。</li>
+        <li><strong>服の形そのものの著作権は、実は弱い</strong>：実用品のデザインは著作権で守られにくい領域です。ただし守られないから何でも自由、ではなく、デッドコピー（そっくり模倣）は不正競争防止法などで問題になりえます。「参考」と「盗用」の線引きに迷う案件は、自己判断せず専門家へ。</li>
+        <li><strong>生成AI画像の商用利用</strong>：使うサービスの規約確認（第7章）に加え、出てきた画像が既存作品に酷似していないかを自分の目でも確かめる習慣を。</li>
+      </ul>
+    </section>
+
+    <section class="rv">
+      <h2>売り方の守り：タグと広告の言葉</h2>
+      <p>ここは「知らなかった」が通用しにくい、実務直結の領域です。</p>
+      <ul>
+        <li><strong>品質表示は義務</strong>：販売する衣類には、素材の混率や洗濯表示（絵表示）などの表示が法律で義務づけられています（第7章の間違い探しで学んだとおり）。表示内容は仕様書の混率と一致させること。</li>
+        <li><strong>盛った広告は法律違反になりうる</strong>：景品表示法は、根拠なく実際より良く見せる表現（優良誤認）を禁じています。「最高品質」「業界No.1」「絶対に縮みません」のような<mark>根拠を示せない断定は、商品ページでもSNSでも使わない</mark>。第8章で学んだ「盛り言葉を消す」は、文章の質だけでなく法律の守りでもあったわけです。</li>
+        <li><strong>特定商取引法の表記</strong>：第15章の開店チェックリストの再確認。事業者情報、返品条件などの表示は開店の前提条件です。</li>
+      </ul>
+    </section>
+
+    <section class="rv">
+      <h2>取引の守りと、頼れる窓口</h2>
+      <p>工場とのやり取りは、信頼関係と同じくらい「文面に残す」ことが守りになります。発注時にメールで明文化しておきたいのは、<strong>数量、単価、納期、支払い条件、検品基準（何をもって不良とするか）、不良品が出たときの扱い</strong>。第13章の問い合わせメールの次の段階として、覚えておいてください。</p>
+      <p>そして、ひとりで抱えないこと。<strong>知財総合支援窓口</strong>（商標や知財の無料相談）や<strong>よろず支援拠点</strong>（経営全般の無料相談）など、公的な無料窓口が全国にあります。AIの出番は、その相談を濃くする準備です。</p>
+      <figure class="prompt-card">
+        <figcaption><span class="pc-label">プロンプト例</span><span class="pc-title">専門家相談の準備</span><span class="pc-tools">3ツール共通</span></figcaption>
+        <pre class="pc-body">来週、<em>（例：知財総合支援窓口で商標について）</em>無料相談を受けます。限られた時間で最大の成果を得たいので、準備を手伝ってください。
+私の状況：<em>（ブランド名、進み具合、心配ごとを2〜3行）</em>
+
+1. 相談前に自分で調べて持参すべき資料や情報を挙げてください
+2. 聞くべき質問を、優先度の高い順に7つ作ってください
+3. 相談員が使いそうな専門用語を5つ、初心者向けの説明つきで予習させてください
+※制度や費用の断定はしなくてよいです。それは相談当日に専門家に確認します。</pre>
+        <div class="pc-foot"><button class="copy-btn" type="button">コピー</button><span class="pc-hint">AIは相談の代わりでなく、相談を濃くする道具</span></div>
+      </figure>
+    </section>
+
+    <aside class="work rv">
+      <h2>実践ワーク：守りの30分点検</h2>
+      <ol>
+        <li>自分のブランド名（とロゴ案）をJ-PlatPatでもう一度検索し、結果をメモに残す</li>
+        <li>商品ページやSNSの下書きから「根拠を示せない断定」を探して消す（第8章の禁止語リストに追加）</li>
+        <li>近くの知財総合支援窓口を検索して、場所と予約方法だけ控えておく</li>
+      </ol>
+    </aside>
+
+    <section class="quiz rv" aria-label="第16章のクイズ">
+      <h2>おさらいクイズ</h2>
+      <details class="q"><summary>Q1. 商標の「先願主義」とは？　なぜ怖い？</summary>
+        <div class="q-a"><p><strong>答え</strong>：先に使った人ではなく、先に出願した人が権利を取る原則。育てた名前でも他人に先に出願されると、変えるのは自分の側になりえるのでした。</p></div>
+      </details>
+      <details class="q"><summary>Q2. 「絶対に縮みません」「業界最高品質」という商品ページの問題点は？</summary>
+        <div class="q-a"><p><strong>答え</strong>：根拠を示せない断定は景品表示法の優良誤認にあたりうる。文章の質の問題（第8章）であると同時に、法律の問題でもありました。</p></div>
+      </details>
+      <details class="q"><summary>Q3. 法律まわりでの正しい分業は？</summary>
+        <div class="q-a"><p><strong>答え</strong>：下調べと相談準備はAI、事実確認は公的な一次情報、最終判断は専門家（無料の公的窓口も使える）。下書きと正本の法律版でした。</p></div>
+      </details>
+    </section>
+
+  </div>
+  <div class="ch-end">
+    <button class="done-btn" type="button" data-done="ch16"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
+    <nav class="pager" aria-label="章の移動">
+      <a href="#/ch15" data-nav><span class="dir">前の章</span>15 ネットショップを開く</a>
+      <a class="next" href="#/ch17" data-nav><span class="dir">次の章</span>17 SNSで知ってもらう</a>
+    </nav>
+  </div>
+</article>
+<article class="view chapter" id="view-ch17" data-acc="c12" aria-labelledby="ch17-title">
+  <header class="ch-hero">
+    <div class="ch-hero-in">
+      <div class="ch-kicker"><span class="part-tag">応用編</span><span class="ch-num">17</span></div>
+      <h1 id="ch17-title">SNSで知ってもらう</h1>
       <p class="ch-lead">個人ブランドにとってSNSは、広告費ゼロで世界とつながる唯一の売り場入口です。問題は、続けるのがとにかく大変なこと。AIを「編集部員」にして、無理なく回る仕組みを作ります。</p>
       <ul class="goals">
         <li>自分のブランドに合うSNSを選び、発信の「柱」を3本決められる</li>
@@ -2011,7 +2619,7 @@ td .tag-n{color:var(--ink-3)}
     <section class="rv">
       <h2>まず1つの媒体に集中する</h2>
       <p>InstagramにTikTokにXにブログ。全部やろうとすると、全部が中途半端になります。立ち上げ期は<mark>主戦場を1つ決めて、他は転載程度</mark>で十分です。</p>
-      <p>アパレルの定番は、ビジュアルで世界観を積み上げられる<strong>Instagram</strong>。短い動画で一気に知られたいなら<strong>TikTok</strong>や リール。文章とノリで人柄を伝えるのが得意なら<strong>X</strong>。迷ったら、あなたのペルソナが一番長く時間を過ごしている場所を選びます（第7章でペルソナに「よく見るSNS」を聞いてありましたね）。</p>
+      <p>アパレルの定番は、ビジュアルで世界観を積み上げられる<strong>Instagram</strong>。短い動画で一気に知られたいなら<strong>TikTok</strong>や リール。文章とノリで人柄を伝えるのが得意なら<strong>X</strong>。迷ったら、あなたのペルソナが一番長く時間を過ごしている場所を選びます（第10章でペルソナに「よく見るSNS」を聞いてありましたね）。</p>
       <p>そして大事な心構えをひとつ。立ち上げ期のSNSの目的は、フォロワー数ではありません。<strong>「この人の服が好き」という濃い100人</strong>に出会うことです。数字の大きさより、コメントやDMの温度を見てください。</p>
     </section>
 
@@ -2064,7 +2672,7 @@ td .tag-n{color:var(--ink-3)}
       <p>SNS運用の敵は、開始3週間後にやってくる「もう書くことがない」です。備えを2つ。</p>
       <ol>
         <li><strong>ネタ出しの型紙を持っておく</strong>：「柱②（つくる過程）の投稿ネタを、いま準備中の出来事からひねり出したい。最近あったこと：<em>（箇条書きでメモを貼る）</em>。投稿ネタとして面白い順に10個提案して」。日々の些細なメモが、AIを通すとネタに化けます。</li>
-        <li><strong>伸びた投稿をAIと分析する</strong>：「この3投稿は反応が良く、この3投稿は悪かった。本文を貼るので、違いの仮説を3つ挙げて、次に試す投稿案を出して」。数字のふりかえりの本格版は第14章でやります。</li>
+        <li><strong>伸びた投稿をAIと分析する</strong>：「この3投稿は反応が良く、この3投稿は悪かった。本文を貼るので、違いの仮説を3つ挙げて、次に試す投稿案を出して」。数字のふりかえりの本格版は第19章でやります。</li>
       </ol>
       <p>広告（少額のSNS広告）は、オーガニック投稿で「どの写真とどの言葉が反応を取れるか」がわかってからで遅くありません。広告文づくりも、ここまでのプロンプトの応用でそのまま書けます。</p>
     </section>
@@ -2079,7 +2687,7 @@ td .tag-n{color:var(--ink-3)}
       <p>「計画→量産→ひと手間」の流れが回れば、SNSはもう怖くありません。</p>
     </aside>
 
-    <section class="quiz rv" aria-label="第12章のクイズ">
+    <section class="quiz rv" aria-label="第17章のクイズ">
       <h2>おさらいクイズ</h2>
       <details class="q"><summary>Q1. 立ち上げ期のSNSで追うべきものは、フォロワー数ではなく？</summary>
         <div class="q-a"><p><strong>答え</strong>：「この人の服が好き」という濃いファン。コメントやDMの温度を見る。まず主戦場を1媒体に絞るのでした。</p></div>
@@ -2094,19 +2702,19 @@ td .tag-n{color:var(--ink-3)}
 
   </div>
   <div class="ch-end">
-    <button class="done-btn" type="button" data-done="ch12"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
+    <button class="done-btn" type="button" data-done="ch17"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
     <nav class="pager" aria-label="章の移動">
-      <a href="#/ch11" data-nav><span class="dir">前の章</span>11 ネットショップを開く</a>
-      <a class="next" href="#/ch13" data-nav><span class="dir">次の章</span>13 日々の運営をラクにする</a>
+      <a href="#/ch16" data-nav><span class="dir">前の章</span>16 法とルールの守り</a>
+      <a class="next" href="#/ch18" data-nav><span class="dir">次の章</span>18 日々の運営をラクにする</a>
     </nav>
   </div>
 </article>
-<!-- ============================== 第13章 ============================== -->
-<article class="view chapter" id="view-ch13" data-acc="c13" aria-labelledby="ch13-title">
+<!-- ============================== 第18章 ============================== -->
+<article class="view chapter" id="view-ch18" data-acc="c13" aria-labelledby="ch18-title">
   <header class="ch-hero">
     <div class="ch-hero-in">
-      <div class="ch-kicker"><span class="part-tag">応用編</span><span class="ch-num">13</span></div>
-      <h1 id="ch13-title">日々の運営をラクにする</h1>
+      <div class="ch-kicker"><span class="part-tag">応用編</span><span class="ch-num">18</span></div>
+      <h1 id="ch18-title">日々の運営をラクにする</h1>
       <p class="ch-lead">開店すると、華やかな仕事の裏で「事務」が静かに増えていきます。問い合わせ、レビュー、発送、お金の記録。ひとり運営の生命線は、この地味な仕事をどれだけ軽くできるか。AIがいちばん堅実に効く章です。</p>
       <ul class="goals">
         <li>よくある問い合わせへの返信テンプレートを整備できる</li>
@@ -2133,7 +2741,7 @@ td .tag-n{color:var(--ink-3)}
       </figure>
       <aside class="note-warn note">
         <h3>お客さまの情報はそのまま貼らない</h3>
-        <p>第6章の約束を、ここで実際に守ります。問い合わせメールをAIに相談するときは、<strong>名前、住所、注文番号などを〔お客さま〕〔注文品〕のように伏せ字にしてから</strong>貼り付ける。ひと手間ですが、これが信頼を扱う人の作法です。</p>
+        <p>第7章の約束を、ここで実際に守ります。問い合わせメールをAIに相談するときは、<strong>名前、住所、注文番号などを〔お客さま〕〔注文品〕のように伏せ字にしてから</strong>貼り付ける。ひと手間ですが、これが信頼を扱う人の作法です。</p>
       </aside>
     </section>
 
@@ -2154,7 +2762,7 @@ td .tag-n{color:var(--ink-3)}
 ・送る前に私が確認すべき点があれば指摘して</pre>
         <div class="pc-foot"><button class="copy-btn" type="button">コピー</button><span class="pc-hint">腹が立った日ほど、直接書かずAIを一枚はさむ</span></div>
       </figure>
-      <p>レビューへの返信も同じ要領です。良いレビューには「ありがとうございます＋ひとこと固有の反応」、厳しいレビューには「受け止め＋事実＋改善」。テンプレを持ちつつ、<strong>固有のひとこと</strong>（第12章のひと手間と同じ技）を必ず足すと、見ている他のお客さまへの信頼にもなります。</p>
+      <p>レビューへの返信も同じ要領です。良いレビューには「ありがとうございます＋ひとこと固有の反応」、厳しいレビューには「受け止め＋事実＋改善」。テンプレを持ちつつ、<strong>固有のひとこと</strong>（第17章のひと手間と同じ技）を必ず足すと、見ている他のお客さまへの信頼にもなります。</p>
     </section>
 
     <section class="rv">
@@ -2183,7 +2791,7 @@ td .tag-n{color:var(--ink-3)}
 やり方：私に質問を1つずつして、手順、使う道具、判断に迷うケースを聞き出してください。
 聞き終えたら、番号つきの手順書（チェックリスト形式、所要時間の目安つき）にまとめてください。
 では最初の質問をどうぞ。</pre>
-        <div class="pc-foot"><button class="copy-btn" type="button">コピー</button><span class="pc-hint">第7章のインタビュー式の応用。全業務で使える</span></div>
+        <div class="pc-foot"><button class="copy-btn" type="button">コピー</button><span class="pc-hint">第10章のインタビュー式の応用。全業務で使える</span></div>
       </figure>
       <p>マニュアルがあると、繁忙期に人に手伝いを頼めるようになり、あなたが風邪をひいてもブランドが止まりません。ひとり運営の「ひとり」を、少しずつ卒業していく準備です。</p>
     </section>
@@ -2197,7 +2805,7 @@ td .tag-n{color:var(--ink-3)}
       </ol>
     </aside>
 
-    <section class="quiz rv" aria-label="第13章のクイズ">
+    <section class="quiz rv" aria-label="第18章のクイズ">
       <h2>おさらいクイズ</h2>
       <details class="q"><summary>Q1. 問い合わせ対応でのAI活用の最大のコツは？</summary>
         <div class="q-a"><p><strong>答え</strong>：来てから作るのではなく、起きそうな問い合わせに先回りしてテンプレートを仕込んでおくこと。貼り付ける前の伏せ字も忘れずに。</p></div>
@@ -2209,20 +2817,20 @@ td .tag-n{color:var(--ink-3)}
 
   </div>
   <div class="ch-end">
-    <button class="done-btn" type="button" data-done="ch13"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
+    <button class="done-btn" type="button" data-done="ch18"><span class="nd"></span><span class="done-label">この章を読み終えた（ひと針すすむ）</span></button>
     <nav class="pager" aria-label="章の移動">
-      <a href="#/ch12" data-nav><span class="dir">前の章</span>12 SNSで知ってもらう</a>
-      <a class="next" href="#/ch14" data-nav><span class="dir">次の章</span>14 ふりかえりと、学びつづけ方</a>
+      <a href="#/ch17" data-nav><span class="dir">前の章</span>17 SNSで知ってもらう</a>
+      <a class="next" href="#/ch19" data-nav><span class="dir">次の章</span>19 ふりかえりと、学びつづけ方</a>
     </nav>
   </div>
 </article>
 
-<!-- ============================== 第14章 ============================== -->
-<article class="view chapter" id="view-ch14" data-acc="c14" aria-labelledby="ch14-title">
+<!-- ============================== 第19章 ============================== -->
+<article class="view chapter" id="view-ch19" data-acc="c14" aria-labelledby="ch19-title">
   <header class="ch-hero">
     <div class="ch-hero-in">
-      <div class="ch-kicker"><span class="part-tag">応用編</span><span class="ch-num">14</span></div>
-      <h1 id="ch14-title">ふりかえりと、学びつづけ方</h1>
+      <div class="ch-kicker"><span class="part-tag">応用編</span><span class="ch-num">19</span></div>
+      <h1 id="ch19-title">ふりかえりと、学びつづけ方</h1>
       <p class="ch-lead">最終章です。売れても売れなくても、開店したあとの毎月が本番。数字とのやさしい付き合い方と、変化しつづけるAIを追いかける方法。そして、旅立ちの話をします。</p>
       <ul class="goals">
         <li>月に一度、少ない数字でブランドをふりかえる習慣を設計できる</li>
@@ -2296,7 +2904,7 @@ td .tag-n{color:var(--ink-3)}
       </ol>
     </aside>
 
-    <section class="quiz rv" aria-label="第14章のクイズ">
+    <section class="quiz rv" aria-label="第19章のクイズ">
       <h2>おさらいクイズ（最終回）</h2>
       <details class="q"><summary>Q1. 月次ふりかえりで、課題を1つに絞る理由は？</summary>
         <div class="q-a"><p><strong>答え</strong>：ひとり運営で同時に直せるのは1つだけだから。欲張った月は何も変わらない、が実感則でした。</p></div>
@@ -2308,9 +2916,9 @@ td .tag-n{color:var(--ink-3)}
 
   </div>
   <div class="ch-end">
-    <button class="done-btn" type="button" data-done="ch14"><span class="nd"></span><span class="done-label">読了！最後のひと針を打つ</span></button>
+    <button class="done-btn" type="button" data-done="ch19"><span class="nd"></span><span class="done-label">読了！最後のひと針を打つ</span></button>
     <nav class="pager" aria-label="章の移動">
-      <a href="#/ch13" data-nav><span class="dir">前の章</span>13 日々の運営をラクにする</a>
+      <a href="#/ch18" data-nav><span class="dir">前の章</span>18 日々の運営をラクにする</a>
       <a class="next" href="#/appendix" data-nav><span class="dir">つづいて</span>付録：道具箱へ</a>
     </nav>
   </div>
@@ -2336,6 +2944,7 @@ td .tag-n{color:var(--ink-3)}
         <button class="wbtn" type="button" data-filter="product">商品づくり</button>
         <button class="wbtn" type="button" data-filter="shop">販売</button>
         <button class="wbtn" type="button" data-filter="ops">SNSと運営</button>
+        <button class="wbtn" type="button" data-filter="law">お金と法</button>
       </div>
 
       <div class="lib-item" data-cat="concept">
@@ -2350,7 +2959,7 @@ td .tag-n{color:var(--ink-3)}
 ・言葉づかい：<em>（です/ます調、絵文字の扱いなど）</em>
 ・やらないこと：<em>（煽り文句を使わない、など）</em>
 この文脈を前提に、次の依頼に答えてください。</pre>
-          <div class="pc-foot"><button class="copy-btn" type="button">コピー</button><span class="pc-hint">第7章で作るコンセプトシートの携帯版</span></div>
+          <div class="pc-foot"><button class="copy-btn" type="button">コピー</button><span class="pc-hint">第10章で作るコンセプトシートの携帯版</span></div>
         </figure>
       </div>
 
@@ -2388,7 +2997,7 @@ td .tag-n{color:var(--ink-3)}
 
       <div class="lib-item" data-cat="base">
         <figure class="prompt-card">
-          <figcaption><span class="pc-label">D</span><span class="pc-title">事実確認モード</span><span class="pc-tools">第6章</span></figcaption>
+          <figcaption><span class="pc-label">D</span><span class="pc-title">事実確認モード</span><span class="pc-tools">第7章</span></figcaption>
           <pre class="pc-body"><em>（聞きたいこと)</em>について教えてください。
 条件：
 ・確実にわかっていることと、不確かな推測を、はっきり分けて書いてください
@@ -2409,7 +3018,7 @@ td .tag-n{color:var(--ink-3)}
 
       <div class="lib-item" data-cat="concept">
         <figure class="prompt-card">
-          <figcaption><span class="pc-label">1</span><span class="pc-title">インタビュー式コンセプトづくり</span><span class="pc-tools">第7章</span></figcaption>
+          <figcaption><span class="pc-label">1</span><span class="pc-title">インタビュー式コンセプトづくり</span><span class="pc-tools">第10章</span></figcaption>
           <pre class="pc-body">あなたはブランドづくりの経験豊富な編集者です。
 これから私のアパレルブランドのコンセプトを一緒に言葉にしてください。
 進め方：
@@ -2424,7 +3033,7 @@ td .tag-n{color:var(--ink-3)}
 
       <div class="lib-item" data-cat="concept">
         <figure class="prompt-card">
-          <figcaption><span class="pc-label">2</span><span class="pc-title">ペルソナを3人つくる</span><span class="pc-tools">第7章</span></figcaption>
+          <figcaption><span class="pc-label">2</span><span class="pc-title">ペルソナを3人つくる</span><span class="pc-tools">第10章</span></figcaption>
           <pre class="pc-body">次のブランドの理想のお客さま像（ペルソナ）を、タイプの違う3人作ってください。
 ブランド：<em>（ブランド文脈テンプレを貼り付け）</em>
 各ペルソナには以下を含めてください：
@@ -2435,7 +3044,7 @@ td .tag-n{color:var(--ink-3)}
 
       <div class="lib-item" data-cat="concept">
         <figure class="prompt-card">
-          <figcaption><span class="pc-label">3</span><span class="pc-title">ブランド名の候補を30案</span><span class="pc-tools">第8章</span></figcaption>
+          <figcaption><span class="pc-label">3</span><span class="pc-title">ブランド名の候補を30案</span><span class="pc-tools">第11章</span></figcaption>
           <pre class="pc-body">アパレルブランドの名前の候補を30案ください。
 ブランドの文脈：<em>（貼り付け）</em>
 条件：<em>（文字数、言語の雰囲気、連想させたいもの、避けたいもの）</em>
@@ -2446,7 +3055,7 @@ td .tag-n{color:var(--ink-3)}
 
       <div class="lib-item" data-cat="concept">
         <figure class="prompt-card">
-          <figcaption><span class="pc-label">4</span><span class="pc-title">世界観シートづくり</span><span class="pc-tools">第8章</span></figcaption>
+          <figcaption><span class="pc-label">4</span><span class="pc-title">世界観シートづくり</span><span class="pc-tools">第11章</span></figcaption>
           <pre class="pc-body">私のブランドの「世界観シート」を作ってください。
 ブランドの文脈：<em>（貼り付け）</em>
 含めてほしい項目：
@@ -2462,7 +3071,7 @@ td .tag-n{color:var(--ink-3)}
 
       <div class="lib-item" data-cat="product">
         <figure class="prompt-card">
-          <figcaption><span class="pc-label">5</span><span class="pc-title">デザイン展開マトリクス</span><span class="pc-tools">第9章</span></figcaption>
+          <figcaption><span class="pc-label">5</span><span class="pc-title">デザイン展開マトリクス</span><span class="pc-tools">第12章</span></figcaption>
           <pre class="pc-body">次の商品のデザインバリエーションを、要素の掛け算で広げてください。
 ベース：<em>（商品）</em>／ブランドの文脈：<em>（貼り付け）</em>
 1. 要素の候補を表で：シルエット4種、色6色、ディテール6種
@@ -2474,7 +3083,7 @@ td .tag-n{color:var(--ink-3)}
 
       <div class="lib-item" data-cat="product">
         <figure class="prompt-card">
-          <figcaption><span class="pc-label">6</span><span class="pc-title">デザインラフの画像生成</span><span class="pc-tools">第9章</span></figcaption>
+          <figcaption><span class="pc-label">6</span><span class="pc-title">デザインラフの画像生成</span><span class="pc-tools">第12章</span></figcaption>
           <pre class="pc-body">アパレル商品のデザインラフを作ってください。
 ・アイテム：<em>（形とシルエット）</em>
 ・色：<em>（色）</em>
@@ -2488,7 +3097,7 @@ td .tag-n{color:var(--ink-3)}
 
       <div class="lib-item" data-cat="product">
         <figure class="prompt-card">
-          <figcaption><span class="pc-label">7</span><span class="pc-title">仕様書の下書きと抜けチェック</span><span class="pc-tools">第9章</span></figcaption>
+          <figcaption><span class="pc-label">7</span><span class="pc-title">仕様書の下書きと抜けチェック</span><span class="pc-tools">第12章</span></figcaption>
           <pre class="pc-body"><em>（商品）</em>を小ロットで工場に生産依頼するための仕様書の下書きを作ってください。
 決まっていること：<em>（箇条書き）</em>
 1. 必要項目の一覧を作り、決まっている内容を埋めて
@@ -2500,7 +3109,7 @@ td .tag-n{color:var(--ink-3)}
 
       <div class="lib-item" data-cat="product">
         <figure class="prompt-card">
-          <figcaption><span class="pc-label">8</span><span class="pc-title">工場への問い合わせメール</span><span class="pc-tools">第10章</span></figcaption>
+          <figcaption><span class="pc-label">8</span><span class="pc-title">工場への問い合わせメール</span><span class="pc-tools">第13章</span></figcaption>
           <pre class="pc-body">縫製工場への初回問い合わせメールの下書きを作ってください。
 私の状況：<em>（何を、何枚、いつまでに。実績の有無も正直に）</em>
 条件：
@@ -2513,7 +3122,7 @@ td .tag-n{color:var(--ink-3)}
 
       <div class="lib-item" data-cat="shop">
         <figure class="prompt-card">
-          <figcaption><span class="pc-label">9</span><span class="pc-title">不安つぶし型の商品説明</span><span class="pc-tools">第11章</span></figcaption>
+          <figcaption><span class="pc-label">9</span><span class="pc-title">不安つぶし型の商品説明</span><span class="pc-tools">第15章</span></figcaption>
           <pre class="pc-body">ネットショップの商品ページの文章を作ってください。
 ブランドの文脈：<em>（貼り付け）</em>／商品：<em>（名前、価格、素材、サイズ）</em>
 手順：
@@ -2526,7 +3135,7 @@ td .tag-n{color:var(--ink-3)}
 
       <div class="lib-item" data-cat="shop">
         <figure class="prompt-card">
-          <figcaption><span class="pc-label">10</span><span class="pc-title">撮影指示書づくり</span><span class="pc-tools">第11章</span></figcaption>
+          <figcaption><span class="pc-label">10</span><span class="pc-title">撮影指示書づくり</span><span class="pc-tools">第15章</span></figcaption>
           <pre class="pc-body">スマホでのアパレル商品撮影の「撮影指示書」を作ってください。
 商品：<em>（商品）</em>／世界観：<em>（写真の方向性を貼り付け）</em>
 ・必要カット一覧と各カットの目的
@@ -2539,7 +3148,7 @@ td .tag-n{color:var(--ink-3)}
 
       <div class="lib-item" data-cat="shop">
         <figure class="prompt-card">
-          <figcaption><span class="pc-label">11</span><span class="pc-title">開店前チェックリスト</span><span class="pc-tools">第11章</span></figcaption>
+          <figcaption><span class="pc-label">11</span><span class="pc-title">開店前チェックリスト</span><span class="pc-tools">第15章</span></figcaption>
           <pre class="pc-body">個人アパレルブランドがネットショップを開店する前のチェックリストを作ってください。
 状況：<em>（売り場、商品、配送の想定）</em>
 ・「法律や規約まわり」「お金まわり」「商品ページ」「配送と梱包」「開店後すぐ必要になるもの」に分類
@@ -2551,7 +3160,7 @@ td .tag-n{color:var(--ink-3)}
 
       <div class="lib-item" data-cat="ops">
         <figure class="prompt-card">
-          <figcaption><span class="pc-label">12</span><span class="pc-title">1か月の投稿カレンダー</span><span class="pc-tools">第12章</span></figcaption>
+          <figcaption><span class="pc-label">12</span><span class="pc-title">1か月の投稿カレンダー</span><span class="pc-tools">第17章</span></figcaption>
           <pre class="pc-body">Instagramの1か月分の投稿計画を作ってください。
 ブランドの文脈：<em>（貼り付け）</em>／体制：<em>（週◯回が限界、など）</em>
 コンテンツの柱：<em>（3本）</em>
@@ -2563,7 +3172,7 @@ td .tag-n{color:var(--ink-3)}
 
       <div class="lib-item" data-cat="ops">
         <figure class="prompt-card">
-          <figcaption><span class="pc-label">13</span><span class="pc-title">キャプション5案＋ハッシュタグ</span><span class="pc-tools">第12章</span></figcaption>
+          <figcaption><span class="pc-label">13</span><span class="pc-title">キャプション5案＋ハッシュタグ</span><span class="pc-tools">第17章</span></figcaption>
           <pre class="pc-body">Instagramのキャプションを作ってください。
 ブランドの言葉づかい：<em>（貼り付け）</em>／投稿の内容：<em>（何の投稿か）</em>
 ・トーンの違う5案（しっとり2、軽やか2、短文1）
@@ -2575,7 +3184,7 @@ td .tag-n{color:var(--ink-3)}
 
       <div class="lib-item" data-cat="ops">
         <figure class="prompt-card">
-          <figcaption><span class="pc-label">14</span><span class="pc-title">返信テンプレート10本の仕込み</span><span class="pc-tools">第13章</span></figcaption>
+          <figcaption><span class="pc-label">14</span><span class="pc-title">返信テンプレート10本の仕込み</span><span class="pc-tools">第18章</span></figcaption>
           <pre class="pc-body">個人アパレルブランドのネットショップに来がちな問い合わせを10種類挙げて、それぞれに返信テンプレートを作ってください。
 ブランドの言葉づかい：<em>（貼り付け）</em>／運営の前提：<em>（発送日数、交換条件など）</em>
 ・定番（サイズ交換、発送時期、再入荷）を必ず含めて
@@ -2587,7 +3196,7 @@ td .tag-n{color:var(--ink-3)}
 
       <div class="lib-item" data-cat="ops">
         <figure class="prompt-card">
-          <figcaption><span class="pc-label">15</span><span class="pc-title">クレーム返信の下書き</span><span class="pc-tools">第13章</span></figcaption>
+          <figcaption><span class="pc-label">15</span><span class="pc-title">クレーム返信の下書き</span><span class="pc-tools">第18章</span></figcaption>
           <pre class="pc-body">お客さまからの厳しいご指摘に、返信の下書きを作ってください。
 いただいた内容（個人情報は伏せ字済み）：<em>（要約）</em>
 事実関係：<em>（確認できた事実）</em>／方針：<em>（決めた対応）</em>
@@ -2598,7 +3207,7 @@ td .tag-n{color:var(--ink-3)}
 
       <div class="lib-item" data-cat="ops">
         <figure class="prompt-card">
-          <figcaption><span class="pc-label">16</span><span class="pc-title">月次ふりかえり面談</span><span class="pc-tools">第14章</span></figcaption>
+          <figcaption><span class="pc-label">16</span><span class="pc-title">月次ふりかえり面談</span><span class="pc-tools">第19章</span></figcaption>
           <pre class="pc-body">今月のブランド運営のふりかえりを手伝ってください。あなたは、数字を責めずに次の一手を一緒に探すコーチです。
 ブランドの文脈：<em>（貼り付け）</em>
 今月の数字：<em>（訪問、購入、購入率、SNSの動き）</em>
@@ -2607,6 +3216,68 @@ td .tag-n{color:var(--ink-3)}
 2. 課題はいちばん効きそうな1つだけ
 3. 来月の一手を無理のない大きさで
 4. 来月見るべき数字の確認</pre>
+          <div class="pc-foot"><button class="copy-btn" type="button">コピー</button></div>
+        </figure>
+      </div>
+
+      <div class="lib-item" data-cat="base">
+        <figure class="prompt-card">
+          <figcaption><span class="pc-label">17</span><span class="pc-title">画像・資料を読ませる型紙</span><span class="pc-tools">第6章</span></figcaption>
+          <pre class="pc-body">添付した<em>（画像／ファイルの説明）</em>を見てください。
+目的：<em>（何のために見せるか）</em>
+注目してほしい点：<em>（どこを見てほしいか）</em>
+出力：<em>（答えの形式）</em>
+私のブランドの文脈：<em>（コンセプトシートを貼り付け）</em></pre>
+          <div class="pc-foot"><button class="copy-btn" type="button">コピー</button></div>
+        </figure>
+      </div>
+
+      <div class="lib-item" data-cat="base">
+        <figure class="prompt-card">
+          <figcaption><span class="pc-label">18</span><span class="pc-title">平均回避の前置き</span><span class="pc-tools">第8章</span></figcaption>
+          <pre class="pc-body">これから文章づくりを頼みますが、先にお願いがあります。
+・どのブランドでも使い回せる決まり文句（究極の、こだわりの、マストアイテム、〜こと間違いなし、いかがでしょうか等）は使わないでください
+・盛った形容詞より、具体的な事実と数字で語ってください
+・私の判断基準：<em>（自分の良し悪しの物差し）</em>
+・迷ったら、無難な案と大胆な案の両方を出して、私に選ばせてください
+この前提で：<em>（本来の依頼）</em></pre>
+          <div class="pc-foot"><button class="copy-btn" type="button">コピー</button></div>
+        </figure>
+      </div>
+
+      <div class="lib-item" data-cat="base">
+        <figure class="prompt-card">
+          <figcaption><span class="pc-label">19</span><span class="pc-title">エージェントへの最初の頼み方</span><span class="pc-tools">第9章</span></figcaption>
+          <pre class="pc-body">はじめてエージェントを使います。<em>（作りたいもの）</em>を作ってほしい。
+・まず、何をどんな手順で作るつもりか、専門用語を使わずに説明してください
+・私が理解して「OK」と言ってから作業を始めてください
+・完成したら、使い方を3行で教えてください</pre>
+          <div class="pc-foot"><button class="copy-btn" type="button">コピー</button></div>
+        </figure>
+      </div>
+
+      <div class="lib-item" data-cat="law">
+        <figure class="prompt-card">
+          <figcaption><span class="pc-label">20</span><span class="pc-title">資金計画の壁打ち</span><span class="pc-tools">第14章</span></figcaption>
+          <pre class="pc-body">アパレルブランド立ち上げの資金計画を点検してください。あなたは慎重な財務の相談役です。
+私の計画：<em>（自己資金、ロット、原価、価格、初期費用、回収ライン）</em>
+1. 見落としていそうな費用を挙げてください
+2. 「もし半分しか売れなかったら」に何が起きるか、時系列で
+3. 守りに寄せるなら、どの数字から直すべきか1つだけ
+計算はこちらで済ませているので、考え方の点検をお願いします。</pre>
+          <div class="pc-foot"><button class="copy-btn" type="button">コピー</button></div>
+        </figure>
+      </div>
+
+      <div class="lib-item" data-cat="law">
+        <figure class="prompt-card">
+          <figcaption><span class="pc-label">21</span><span class="pc-title">専門家相談の準備</span><span class="pc-tools">第16章</span></figcaption>
+          <pre class="pc-body">来週、<em>（相談先と内容）</em>の無料相談を受けます。準備を手伝ってください。
+私の状況：<em>（2〜3行）</em>
+1. 持参すべき資料や情報を挙げてください
+2. 聞くべき質問を優先度順に7つ
+3. 出てきそうな専門用語5つを初心者向けの説明つきで
+※制度や費用の断定は不要。当日専門家に確認します。</pre>
           <div class="pc-foot"><button class="copy-btn" type="button">コピー</button></div>
         </figure>
       </div>
@@ -2621,16 +3292,21 @@ td .tag-n{color:var(--ink-3)}
       <details><summary>LLM（大規模言語モデル）</summary><div class="g-body"><p>膨大な文章データで訓練された「言葉のAI」の技術的な呼び名。ChatGPTの中身はこれ。（第2章）</p></div></details>
       <details><summary>パラメータ</summary><div class="g-body"><p>AIの中にある膨大な「調整つまみ」。学習の過程で自動的に調整され、その数はAIの規模の目安になる。（第2章）</p></div></details>
       <details><summary>プロンプト</summary><div class="g-body"><p>AIに送る指示文。この本では「役割、文脈、仕事、条件、形式」の5パーツの型紙で組み立てた。（第4章）</p></div></details>
-      <details><summary>ハルシネーション</summary><div class="g-body"><p>AIが、事実でないことをもっともらしく答えてしまう現象。数字、固有名詞、法律、最新情報でとくに起きやすい。対策は「下書きと正本を分ける」。（第6章）</p></div></details>
+      <details><summary>ハルシネーション</summary><div class="g-body"><p>AIが、事実でないことをもっともらしく答えてしまう現象。数字、固有名詞、法律、最新情報でとくに起きやすい。対策は「下書きと正本を分ける」。（第7章）</p></div></details>
       <details><summary>メモリ機能</summary><div class="g-body"><p>会話をまたいでユーザーの好みや情報をAIが覚えておく機能。基本は「会話単位でリセット」前提で、大事な決定は自分のメモに残すのが安全。（第5章）</p></div></details>
-      <details><summary>ペルソナ</summary><div class="g-body"><p>理想のお客さま像を、架空のひとりの人物として具体的に描いたもの。AIに演じさせてインタビューもできるが、あくまで仮説。（第7章）</p></div></details>
-      <details><summary>J-PlatPat</summary><div class="g-body"><p>特許庁の無料検索サイト。商標（ブランド名やロゴの登録）を自分の目で確認できる。名前決めの必須工程。（第8章）</p></div></details>
-      <details><summary>OEM／小ロット生産</summary><div class="g-body"><p>自分のブランドの商品を、工場に委託して作ってもらうこと。小ロットは数十枚からの少量生産。（第10章）</p></div></details>
-      <details><summary>プリントオンデマンド</summary><div class="g-body"><p>注文が入ってから1枚ずつ印刷、生産されるサービス。在庫リスクゼロで試せるが、1枚あたりの原価は高い。（第10章）</p></div></details>
-      <details><summary>仕様書（テックパック）</summary><div class="g-body"><p>何を、どの寸法、素材、縫い方で作るかをまとめた、工場に渡す書類。生成画像はこれの代わりにならない。（第9章）</p></div></details>
-      <details><summary>原価率</summary><div class="g-body"><p>販売価格に対する原価の割合。この本では「利益から逆算して価格を組む」考え方を採った。（第10章）</p></div></details>
-      <details><summary>特定商取引法にもとづく表記</summary><div class="g-body"><p>ネット販売で義務づけられている、事業者情報や返品条件などの表示。開店前チェックリストの常連。（第11章）</p></div></details>
-      <details><summary>コンテンツの柱</summary><div class="g-body"><p>SNSで繰り返し使う投稿の型。3本決めておくと「今日なに投稿しよう」が消える。（第12章）</p></div></details>
+      <details><summary>ペルソナ</summary><div class="g-body"><p>理想のお客さま像を、架空のひとりの人物として具体的に描いたもの。AIに演じさせてインタビューもできるが、あくまで仮説。（第10章）</p></div></details>
+      <details><summary>J-PlatPat</summary><div class="g-body"><p>特許庁の無料検索サイト。商標（ブランド名やロゴの登録）を自分の目で確認できる。名前決めの必須工程。（第11章）</p></div></details>
+      <details><summary>OEM／小ロット生産</summary><div class="g-body"><p>自分のブランドの商品を、工場に委託して作ってもらうこと。小ロットは数十枚からの少量生産。（第13章）</p></div></details>
+      <details><summary>プリントオンデマンド</summary><div class="g-body"><p>注文が入ってから1枚ずつ印刷、生産されるサービス。在庫リスクゼロで試せるが、1枚あたりの原価は高い。（第13章）</p></div></details>
+      <details><summary>仕様書（テックパック）</summary><div class="g-body"><p>何を、どの寸法、素材、縫い方で作るかをまとめた、工場に渡す書類。生成画像はこれの代わりにならない。（第12章）</p></div></details>
+      <details><summary>原価率</summary><div class="g-body"><p>販売価格に対する原価の割合。この本では「利益から逆算して価格を組む」考え方を採った。（第13章）</p></div></details>
+      <details><summary>特定商取引法にもとづく表記</summary><div class="g-body"><p>ネット販売で義務づけられている、事業者情報や返品条件などの表示。開店前チェックリストの常連。（第15章）</p></div></details>
+      <details><summary>コンテンツの柱</summary><div class="g-body"><p>SNSで繰り返し使う投稿の型。3本決めておくと「今日なに投稿しよう」が消える。（第17章）</p></div></details>
+      <details><summary>プロジェクト機能</summary><div class="g-body"><p>資料と指示をAIに常駐させておく「部屋」。ChatGPTのプロジェクト、ClaudeのProjects、GeminiのGemsが該当。文脈の貼り付けを自動化する仕組み。（第6章）</p></div></details>
+      <details><summary>エージェント</summary><div class="g-body"><p>指示を受けると自分で段取りを考え、ファイル作成や作業の実行まで行うAI。Claude CodeとCodexが代表格。「答えを返す」でなく「仕事を終わらせる」。（第9章）</p></div></details>
+      <details><summary>先願主義</summary><div class="g-body"><p>商標は「先に使った人」でなく「先に出願した人」が権利を取るという原則。ブランド名が育ってからでは遅いことがある理由。（第16章）</p></div></details>
+      <details><summary>景品表示法（優良誤認）</summary><div class="g-body"><p>根拠なく実際より良く見せる表現を禁じる法律。「最高品質」「絶対に縮まない」のような根拠を示せない断定は商品ページでもSNSでも避ける。（第16章）</p></div></details>
+      <details><summary>回収ライン</summary><div class="g-body"><p>手数料を引いた売上で初期投資を取り戻せる販売枚数。ロットの半分を超える計画は綱渡り。（第14章）</p></div></details>
     </section>
 
     <section class="rv">
@@ -2645,13 +3321,15 @@ td .tag-n{color:var(--ink-3)}
         <li><label><input type="checkbox" data-check="c6"><span>AI生成画像を実物写真のような顔で使わない、と決めた</span></label></li>
         <li><label><input type="checkbox" data-check="c7"><span>ブランド名の候補は J-PlatPat で商標を確認する、と決めた</span></label></li>
         <li><label><input type="checkbox" data-check="c8"><span>大事な決定はAIの会話任せにせず、自分のメモに残している</span></label></li>
+        <li><label><input type="checkbox" data-check="c9"><span>広告や商品ページで、根拠を示せない断定（最高、絶対など）をしない、と決めた</span></label></li>
+        <li><label><input type="checkbox" data-check="c10"><span>ブランドのお金は生活費と別口座に分け、上限額を決めた</span></label></li>
       </ul>
     </section>
 
   </div>
   <div class="ch-end">
     <nav class="pager" aria-label="章の移動">
-      <a href="#/ch14" data-nav><span class="dir">前の章</span>14 ふりかえりと、学びつづけ方</a>
+      <a href="#/ch19" data-nav><span class="dir">前の章</span>19 ふりかえりと、学びつづけ方</a>
       <a class="next" href="#/home" data-nav><span class="dir">目次へ</span>表紙にもどる</a>
     </nav>
   </div>
@@ -2670,8 +3348,19 @@ td .tag-n{color:var(--ink-3)}
 <script>
 (function(){
 "use strict";
-var STORE_KEY="ai-tailor-book-v1";
-var TOTAL_CH=14;
+var STORE_KEY="ai-tailor-book-v2";
+/* 旧版(14章)からの進捗引き継ぎ */
+try{
+  if(!localStorage.getItem(STORE_KEY)){
+    var _old=JSON.parse(localStorage.getItem("ai-tailor-book-v1"));
+    if(_old&&(_old.done||_old.checks)){
+      var _map={ch1:"ch1",ch2:"ch2",ch3:"ch3",ch4:"ch4",ch5:"ch5",ch6:"ch7",ch7:"ch10",ch8:"ch11",ch9:"ch12",ch10:"ch13",ch11:"ch15",ch12:"ch17",ch13:"ch18",ch14:"ch19"};
+      var _nd={};for(var _k in (_old.done||{})){if(_old.done[_k]&&_map[_k])_nd[_map[_k]]=true}
+      localStorage.setItem(STORE_KEY,JSON.stringify({done:_nd,checks:_old.checks||{}}));
+    }
+  }
+}catch(e){}
+var TOTAL_CH=19;
 function loadState(){try{return JSON.parse(localStorage.getItem(STORE_KEY))||{}}catch(e){return{}}}
 function saveState(s){try{localStorage.setItem(STORE_KEY,JSON.stringify(s))}catch(e){}}
 var state=loadState();
@@ -2681,10 +3370,10 @@ state.done=state.done||{};state.checks=state.checks||{};
 var TITLES={
   home:"AIと仕立てる｜アパレルブランドを立ち上げる人のためのAI教科書",
   ch1:"第1章 AIとはなにか",ch2:"第2章 生成AIのしくみ",ch3:"第3章 三大AIツールの選び方",
-  ch4:"第4章 プロンプトの基本",ch5:"第5章 AIとの対話術",ch6:"第6章 AIの限界と付き合い方",
-  ch7:"第7章 ブランドコンセプトを固める",ch8:"第8章 ブランド名と世界観をつくる",ch9:"第9章 商品企画とデザイン",
-  ch10:"第10章 生産と原価の考え方",ch11:"第11章 ネットショップを開く",ch12:"第12章 SNSで知ってもらう",
-  ch13:"第13章 日々の運営をラクにする",ch14:"第14章 ふりかえりと、学びつづけ方",appendix:"付録 道具箱"
+  ch4:"第4章 プロンプトの基本",ch5:"第5章 AIとの対話術",ch6:"第6章 AIに資料を食わせる",ch7:"第7章 AIの限界と付き合い方",ch8:"第8章 平均を出させない",ch9:"第9章 手を動かすAI",
+  ch10:"第10章 ブランドコンセプトを固める",ch11:"第11章 ブランド名と世界観をつくる",ch12:"第12章 商品企画とデザイン",
+  ch13:"第13章 生産と原価の考え方",ch14:"第14章 自己資金と資金繰り",ch15:"第15章 ネットショップを開く",ch16:"第16章 法とルールの守り",ch17:"第17章 SNSで知ってもらう",
+  ch18:"第18章 日々の運営をラクにする",ch19:"第19章 ふりかえりと、学びつづけ方",appendix:"付録 道具箱"
 };
 function routeName(){
   var h=location.hash||"";
@@ -2938,6 +3627,63 @@ document.addEventListener("click",function(e){
     document.getElementById("spotExp").classList.add("show");
     this.disabled=true;this.textContent="答え合わせ済み";
   });
+})();
+
+/* ---------- AIっぽさ間違い探し ---------- */
+(function(){
+  var game=document.getElementById("avgspot");
+  if(!game)return;
+  var found={};
+  function refresh(){document.getElementById("avgScore").textContent="見つけたAIっぽさ："+Object.keys(found).length+" / 4"}
+  game.addEventListener("click",function(e){
+    var s=e.target.closest(".spot");
+    if(s){var id=s.getAttribute("data-aspot");
+      if(found[id]){delete found[id];s.classList.remove("found")}
+      else{found[id]=true;s.classList.add("found")}
+      refresh()}
+  });
+  document.getElementById("avgReveal").addEventListener("click",function(){
+    var spots=game.querySelectorAll(".spot");
+    for(var i=0;i<spots.length;i++){spots[i].classList.add("found");found[spots[i].getAttribute("data-aspot")]=true}
+    refresh();
+    document.getElementById("avgExp").classList.add("show");
+    this.disabled=true;this.textContent="答え合わせ済み";
+  });
+})();
+
+/* ---------- 資金シミュレーター ---------- */
+(function(){
+  var fc=document.getElementById("fundcalc");
+  if(!fc)return;
+  var lot=document.getElementById("fcLot"),cost=document.getElementById("fcCost"),
+      sample=document.getElementById("fcSample"),fixed=document.getElementById("fcFixed"),
+      price=document.getElementById("fcPrice"),fee=document.getElementById("fcFee");
+  function yen(n){return Math.round(n).toLocaleString("ja-JP")+"円"}
+  function calc(){
+    var L=+lot.value||0;
+    document.getElementById("fcLotVal").textContent=L+"枚";
+    var prod=L*(+cost.value||0), smp=+sample.value||0, fx=+fixed.value||0;
+    var base=prod+smp+fx, reserve=Math.round(base*0.1), total=base+reserve;
+    document.getElementById("fcTotal").innerHTML=Math.round(total).toLocaleString("ja-JP")+"<small> 円</small>";
+    function bar(id,v){document.getElementById(id).style.width=(total>0?Math.max(v/total*100,1):0)+"%"}
+    bar("fcBarProd",prod);bar("fcBarSample",smp);bar("fcBarFixed",fx);bar("fcBarReserve",reserve);
+    document.getElementById("fcValProd").textContent=yen(prod);
+    document.getElementById("fcValSample").textContent=yen(smp);
+    document.getElementById("fcValFixed").textContent=yen(fx);
+    document.getElementById("fcValReserve").textContent=yen(reserve);
+    var net=(+price.value||0)*(1-(+fee.value||0)/100);
+    var warn=document.getElementById("fcWarn");
+    var brk=document.getElementById("fcBreak"),prf=document.getElementById("fcProfit");
+    if(net<=0||total<=0){brk.textContent="—";prf.textContent="—";warn.classList.toggle("show",net<=0);return}
+    var be=Math.ceil(total/net);
+    var pct=L>0?Math.round(be/L*100):0;
+    brk.textContent=be.toLocaleString("ja-JP")+"枚（ロットの"+pct+"%）";
+    var profit=L*net-total;
+    prf.textContent=(profit>=0?"約"+yen(profit):"マイナス約"+yen(-profit));
+    warn.classList.toggle("show",be>L);
+  }
+  [lot,cost,sample,fixed,price,fee].forEach(function(el){el.addEventListener("input",calc)});
+  calc();
 })();
 
 /* ---------- 付録フィルタ ---------- */
